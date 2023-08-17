@@ -4,7 +4,7 @@ import Viewer from "lib/Viewer";
 
 import TestContainer from "mocha-test-container-support";
 
-import { setPostitJS, clearPostitJS, insertCSS } from "test/TestHelper";
+import {setPostitJS, clearPostitJS, insertCSS} from "test/TestHelper";
 
 import simpleXML from "test/fixtures/simple.xml";
 
@@ -38,13 +38,13 @@ describe("Modeler", function () {
     setPostitJS(modeler);
 
     return modeler
-      .importXML(xml)
-      .then(function (result) {
-        return { error: null, warnings: result.warnings, modeler: modeler };
-      })
-      .catch(function (err) {
-        return { error: err, warnings: err.warnings, modeler: modeler };
-      });
+    .importXML(xml)
+    .then(function (result) {
+      return {error: null, warnings: result.warnings, modeler: modeler};
+    })
+    .catch(function (err) {
+      return {error: err, warnings: err.warnings, modeler: modeler};
+    });
   }
 
   (singleStart ? it.only : it)("should import simple board", function () {
@@ -62,57 +62,45 @@ describe("Modeler", function () {
   it("should not import empty definitions", function () {
     // given
     return createModeler(emptyXML)
-      .then(function (result) {
-        var modeler = result.modeler;
+    .then(function (result) {
+      var modeler = result.modeler;
 
-        // when
-        return modeler.importXML(emptyXML);
-      })
-      .catch(function (err) {
-        // then
-        expect(err.message).to.equal("no rootBoard to display");
-      });
+      // when
+      return modeler.importXML(emptyXML);
+    })
+    .catch(function (err) {
+      // then
+      expect(err.message).to.equal("no rootBoard to display");
+    });
   });
 
   it("should re-import simple board", function () {
     // given
     return createModeler(simpleXML)
-      .then(function (result) {
-        var modeler = result.modeler;
+    .then(function (result) {
+      var modeler = result.modeler;
 
-        // when
-        // mimic re-import of same diagram
-        return modeler.importXML(simpleXML);
-      })
-      .then(function (result) {
-        var warnings = result.warnings;
+      // when
+      // mimic re-import of same diagram
+      return modeler.importXML(simpleXML);
+    })
+    .then(function (result) {
+      var warnings = result.warnings;
 
-        // then
-        expect(warnings).to.be.empty;
-      });
+      // then
+      expect(warnings).to.be.empty;
+    });
   });
 
   describe("editor actions support", function () {
     it("should ship all actions", function () {
       // given
       var expectedActions = [
-        "undo",
-        "redo",
-        "copy",
-        "paste",
-        "stepZoom",
-        "zoom",
-        "removeSelection",
-        "moveCanvas",
-        "moveSelection",
-        "selectElements",
-        "spaceTool",
-        "lassoTool",
-        "handTool",
-        "globalConnectTool",
-        "alignElements",
-        "directEditing",
-        "moveToOrigin",
+        'undo', 'redo', 'copy', 'paste', 'stepZoom', 'zoom', 'removeSelection',
+        'moveCanvas', 'moveSelection', 'selectElements', 'spaceTool',
+        'lassoTool', 'handTool', 'globalConnectTool', 'distributeElements',
+        'alignElements', 'setColor', 'directEditing', 'find', 'moveToOrigin',
+        'replaceElement'
       ];
 
       var modeler = new Modeler();
@@ -122,6 +110,7 @@ describe("Modeler", function () {
 
       // then
       var actualActions = editorActions.getActions();
+      console.log(actualActions);
 
       expect(actualActions).to.eql(expectedActions);
     });
@@ -151,7 +140,7 @@ describe("Modeler", function () {
   it("should handle errors", function () {
     var xml = "invalid stuff";
 
-    var modeler = new Modeler({ container: container });
+    var modeler = new Modeler({container: container});
 
     return modeler.importXML(xml).catch(function (err) {
       expect(err).to.exist;
@@ -159,12 +148,12 @@ describe("Modeler", function () {
   });
 
   it("should create new diagram", function () {
-    var modeler = new Modeler({ container: container });
+    var modeler = new Modeler({container: container});
     return modeler.createDiagram();
   });
 
   describe("dependency injection", function () {
-    it("should provide self as <odm>", function () {
+    it("should provide self as <bpmnjs>", function () {
       // when
       return createModeler(simpleXML).then(function (result) {
         var modeler = result.modeler;
@@ -175,7 +164,7 @@ describe("Modeler", function () {
         }
 
         // then
-        expect(modeler.get("odm")).to.equal(modeler);
+        expect(modeler.get("bpmnjs")).to.equal(modeler);
       });
     });
 
@@ -193,7 +182,7 @@ describe("Modeler", function () {
 
         expect(modeler.get("alignElements")).to.exist;
         expect(modeler.get("autoScroll")).to.exist;
-        expect(modeler.get("odCopyPaste")).to.exist;
+        expect(modeler.get("bpmnCopyPaste")).to.exist;
         expect(modeler.get("contextPad")).to.exist;
         expect(modeler.get("copyPaste")).to.exist;
         expect(modeler.get("alignElements")).to.exist;
