@@ -1,0 +1,6 @@
+node_modules/
+public/
+.idea/
+# Project exclude paths
+/lib/model/Types.d.ts
+/lib/util/Types.js
