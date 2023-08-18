@@ -1,13 +1,13 @@
 import $ from "jquery";
 
-import "object-diagram-modeler/assets/odm.css";
-import ODModeler from "object-diagram-modeler/lib/Modeler";
+import "bpmn-token/assets/odm.css";
+import TokenBPMNModeler from "bpmn-token/lib/Modeler";
 
 import emptyBoardXML from "../resources/initial.bpmn";
 import sampleBoardXML from "../resources/initial.bpmn";
 
 // modeler instance
-const modeler = new ODModeler({
+const modeler = new TokenBPMNModeler({
   container: "#canvas",
   keyboard: {
     bindTo: window,
