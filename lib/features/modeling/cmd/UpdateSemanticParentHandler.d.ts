@@ -14,5 +14,5 @@ export default class UpdateSemanticParentHandler implements CommandHandler {
   revert(context: any): any[];
 }
 
-type CommandHandler = import('diagram-js/lib/command/CommandHandler').default;
-type BpmnUpdater = import('../BpmnUpdater').default;
+type CommandHandler = import("diagram-js/lib/command/CommandHandler").default;
+type BpmnUpdater = import("../BpmnUpdater").default;

@@ -4,13 +4,13 @@
  *
  */
 export default class ResizeLaneBehavior {
-    static $inject: string[];
-    /**
-     * @param eventBus
-     * @param modeling
-     */
-    constructor(eventBus: EventBus, modeling: Modeling);
+  static $inject: string[];
+  /**
+   * @param eventBus
+   * @param modeling
+   */
+  constructor(eventBus: EventBus, modeling: Modeling);
 }
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-type Modeling = import('../Modeling').default;
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+type Modeling = import("../Modeling").default;

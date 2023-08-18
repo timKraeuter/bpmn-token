@@ -13,13 +13,13 @@
 export function importBpmnDiagram(
   diagram: ModdleElement,
   definitions: ModdleElement,
-  bpmnDiagram?: ModdleElement
+  bpmnDiagram?: ModdleElement,
 ): Promise<ImportBPMNDiagramResult>;
 
-type ModdleElement = import('../model/Types').ModdleElement;
+type ModdleElement = import("../model/Types").ModdleElement;
 
 export type ImportBPMNDiagramResult = {
-    warnings: string[];
+  warnings: string[];
 };
 
 export type ImportBPMNDiagramError = ImportBPMNDiagramResult & Error;

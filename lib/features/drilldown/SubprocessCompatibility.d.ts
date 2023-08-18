@@ -13,9 +13,9 @@ export default class SubprocessCompatibility {
   constructor(eventBus: EventBus, moddle: Moddle);
 }
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-type Moddle = import('../../model/Types').Moddle;
-type Element = import('../../model/Types').Element;
-type Shape = import('../../model/Types').Shape;
-type CanvasPlane = import('diagram-js/lib/core/Canvas').CanvasPlane;
-type Rect = import('diagram-js/lib/util/Types').Rect;
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+type Moddle = import("../../model/Types").Moddle;
+type Element = import("../../model/Types").Element;
+type Shape = import("../../model/Types").Shape;
+type CanvasPlane = import("diagram-js/lib/core/Canvas").CanvasPlane;
+type Rect = import("diagram-js/lib/util/Types").Rect;

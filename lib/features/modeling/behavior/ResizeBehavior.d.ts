@@ -5,9 +5,13 @@
  *
  * @return
  */
-export function getParticipantResizeConstraints(laneShape: Shape, resizeDirection: Direction, balanced?: boolean): {
-    min: RectTRBL;
-    max: RectTRBL;
+export function getParticipantResizeConstraints(
+  laneShape: Shape,
+  resizeDirection: Direction,
+  balanced?: boolean,
+): {
+  min: RectTRBL;
+  max: RectTRBL;
 };
 
 /**
@@ -40,18 +44,18 @@ export const TEXT_ANNOTATION_MIN_DIMENSIONS: Dimensions;
  *
  */
 export default class ResizeBehavior {
-    static $inject: string[];
-    /**
-     * @param eventBus
-     */
-    constructor(eventBus: EventBus);
+  static $inject: string[];
+  /**
+   * @param eventBus
+   */
+  constructor(eventBus: EventBus);
 }
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-type Shape = import('../../../model/Types').Shape;
-type Dimensions = import('diagram-js/lib/util/Types').Dimensions;
-type Direction = import('diagram-js/lib/util/Types').Direction;
-type RectTRBL = import('diagram-js/lib/util/Types').RectTRBL;
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+type Shape = import("../../../model/Types").Shape;
+type Dimensions = import("diagram-js/lib/util/Types").Dimensions;
+type Direction = import("diagram-js/lib/util/Types").Direction;
+type RectTRBL = import("diagram-js/lib/util/Types").RectTRBL;
 declare var min: (...values: number[]) => number;
 declare var max: (...values: number[]) => number;
 export {};

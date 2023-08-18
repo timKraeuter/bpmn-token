@@ -8,6 +8,11 @@
  *
  * @return
  */
-export default function lineIntersect(l1s: Point, l1e: Point, l2s: Point, l2e: Point): Point;
+export default function lineIntersect(
+  l1s: Point,
+  l1e: Point,
+  l2s: Point,
+  l2e: Point,
+): Point;
 
-type Point = import('diagram-js/lib/util/Types').Point;
+type Point = import("diagram-js/lib/util/Types").Point;

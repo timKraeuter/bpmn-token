@@ -42,6 +42,6 @@ export function getTextAnnotationPosition(source: Shape, element: Shape): Point;
  */
 export function getDataElementPosition(source: Shape, element: Shape): Point;
 
-type Shape = import('../../model/Types').Shape;
-type Point = import('diagram-js/lib/util/Types').Point;
-type DirectionTRBL = import('diagram-js/lib/util/Types').DirectionTRBL;
+type Shape = import("../../model/Types").Shape;
+type Point = import("diagram-js/lib/util/Types").Point;
+type DirectionTRBL = import("diagram-js/lib/util/Types").DirectionTRBL;

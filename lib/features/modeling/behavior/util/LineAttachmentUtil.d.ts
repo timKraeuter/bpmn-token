@@ -26,12 +26,12 @@
  */
 export function getAttachment(point: Point, line: Point[]): Attachment;
 
-type Point = import('diagram-js/lib/util/Types').Point;
+type Point = import("diagram-js/lib/util/Types").Point;
 
 export type Attachment = {
-    type: 'bendpoint' | 'segment';
-    position: Point;
-    segmentIndex: number;
-    bendpointIndex?: number;
-    relativeLocation?: number;
+  type: "bendpoint" | "segment";
+  position: Point;
+  segmentIndex: number;
+  bendpointIndex?: number;
+  relativeLocation?: number;
 };

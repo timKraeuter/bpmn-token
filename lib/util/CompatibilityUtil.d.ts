@@ -5,4 +5,4 @@
  */
 export function ensureCompatDiRef(businessObject: ModdleElement): void;
 
-type ModdleElement = import('../model/Types').ModdleElement;
+type ModdleElement = import("../model/Types").ModdleElement;

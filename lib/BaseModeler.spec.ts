@@ -1,22 +1,21 @@
-import BaseModeler from './BaseModeler';
+import BaseModeler from "./BaseModeler";
 
-import { testViewer } from './BaseViewer.spec';
+import { testViewer } from "./BaseViewer.spec";
 
 const modeler = new BaseModeler({
-  container: 'container'
+  container: "container",
 });
 
 testViewer(modeler);
 
-
 const otherModeler = new BaseModeler({
-  container: 'container'
+  container: "container",
 });
 
 const extendedModeler = new BaseModeler({
-  container: 'container',
+  container: "container",
   alignToOrigin: false,
   propertiesPanel: {
-    attachTo: '#properties-panel'
-  }
+    attachTo: "#properties-panel",
+  },
 });

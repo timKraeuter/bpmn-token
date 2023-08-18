@@ -32,8 +32,8 @@ export default class ResizeLaneHandler implements CommandHandler {
   resizeSpace(shape: Shape, newBounds: Rect): void;
 }
 
-type CommandHandler = import('diagram-js/lib/command/CommandHandler').default;
-type Modeling = import('../Modeling').default;
-type SpaceTool = import('../../space-tool/BpmnSpaceTool').default;
-type Shape = import('../../../model/Types').Shape;
-type Rect = import('diagram-js/lib/util/Types').Rect;
+type CommandHandler = import("diagram-js/lib/command/CommandHandler").default;
+type Modeling = import("../Modeling").default;
+type SpaceTool = import("../../space-tool/BpmnSpaceTool").default;
+type Shape = import("../../../model/Types").Shape;
+type Rect = import("diagram-js/lib/util/Types").Rect;

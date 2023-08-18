@@ -26,7 +26,10 @@ export function isEventSubProcess(element: Element): boolean;
  *
  * @return
  */
-export function hasEventDefinition(element: Element, eventType: string): boolean;
+export function hasEventDefinition(
+  element: Element,
+  eventType: string,
+): boolean;
 
 /**
  * @param element
@@ -49,5 +52,5 @@ export function hasEscalationEventDefinition(element: Element): boolean;
  */
 export function hasCompensateEventDefinition(element: Element): boolean;
 
-type Element = import('../model/Types').Element;
-type ModdleElement = import('../model/Types').ModdleElement;
+type Element = import("../model/Types").Element;
+type ModdleElement = import("../model/Types").ModdleElement;

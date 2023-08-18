@@ -10,15 +10,17 @@ export default class BpmnUpdater extends CommandInterceptor {
    * @param connectionDocking
    * @param translate
    */
-  constructor(eventBus: EventBus, bpmnFactory: BpmnFactory, connectionDocking: CroppingConnectionDocking, translate: Translate);
+  constructor(
+    eventBus: EventBus,
+    bpmnFactory: BpmnFactory,
+    connectionDocking: CroppingConnectionDocking,
+    translate: Translate,
+  );
 
   /**
    * @param context
    */
-  updateAttachment(context: {
-      shape: Shape;
-      host: Shape;
-  }): void;
+  updateAttachment(context: { shape: Shape; host: Shape }): void;
 
   /**
    * @param element
@@ -36,14 +38,22 @@ export default class BpmnUpdater extends CommandInterceptor {
    * @param newContainment
    * @param oldContainment
    */
-  updateFlowNodeRefs(businessObject: ModdleElement, newContainment: ModdleElement, oldContainment: ModdleElement): void;
+  updateFlowNodeRefs(
+    businessObject: ModdleElement,
+    newContainment: ModdleElement,
+    oldContainment: ModdleElement,
+  ): void;
 
   /**
    * @param connection
    * @param newSource
    * @param newTarget
    */
-  updateDiConnection(connection: Connection, newSource: Element, newTarget: Element): void;
+  updateDiConnection(
+    connection: Connection,
+    newSource: Element,
+    newTarget: Element,
+  ): void;
 
   /**
    * @param di
@@ -63,7 +73,11 @@ export default class BpmnUpdater extends CommandInterceptor {
    * @param newParent
    * @param visualParent
    */
-  updateSemanticParent(businessObject: ModdleElement, newParent: ModdleElement, visualParent: ModdleElement): void;
+  updateSemanticParent(
+    businessObject: ModdleElement,
+    newParent: ModdleElement,
+    visualParent: ModdleElement,
+  ): void;
 
   /**
    * @param connection
@@ -74,19 +88,21 @@ export default class BpmnUpdater extends CommandInterceptor {
    * @param context
    */
   updateConnection(context: {
-      connection: Connection;
-      parent: Parent;
-      newParent: Parent;
+    connection: Connection;
+    parent: Parent;
+    newParent: Parent;
   }): void;
 }
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-type BpmnFactory = import('./BpmnFactory').default;
-type CroppingConnectionDocking = import('diagram-js/lib/layout/CroppingConnectionDocking').default;
-export type Translate = typeof import("diagram-js/lib/i18n/translate/translate").default;
-type Connection = import('../../model/Types').Connection;
-type Element = import('../../model/Types').Element;
-type Shape = import('../../model/Types').Shape;
-type Parent = import('../../model/Types').Parent;
-type ModdleElement = import('../../model/Types').ModdleElement;
-import CommandInterceptor from 'diagram-js/lib/command/CommandInterceptor';
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+type BpmnFactory = import("./BpmnFactory").default;
+type CroppingConnectionDocking =
+  import("diagram-js/lib/layout/CroppingConnectionDocking").default;
+export type Translate =
+  typeof import("diagram-js/lib/i18n/translate/translate").default;
+type Connection = import("../../model/Types").Connection;
+type Element = import("../../model/Types").Element;
+type Shape = import("../../model/Types").Shape;
+type Parent = import("../../model/Types").Parent;
+type ModdleElement = import("../../model/Types").ModdleElement;
+import CommandInterceptor from "diagram-js/lib/command/CommandInterceptor";

@@ -3,48 +3,45 @@
  *
  */
 export default class BpmnRules extends RuleProvider {
-    canConnectMessageFlow: typeof canConnectMessageFlow;
-    canConnectSequenceFlow: typeof canConnectSequenceFlow;
-    canConnectDataAssociation: typeof canConnectDataAssociation;
-    canConnectAssociation: typeof canConnectAssociation;
-    canMove: typeof canMove;
-    canAttach: typeof canAttach;
-    canReplace: typeof canReplace;
-    canDrop: typeof canDrop;
-    canInsert: typeof canInsert;
-    canCreate: typeof canCreate;
-    canConnect: typeof canConnect;
-    canResize: typeof canResize;
-    canCopy: typeof canCopy;
+  canConnectMessageFlow: typeof canConnectMessageFlow;
+  canConnectSequenceFlow: typeof canConnectSequenceFlow;
+  canConnectDataAssociation: typeof canConnectDataAssociation;
+  canConnectAssociation: typeof canConnectAssociation;
+  canMove: typeof canMove;
+  canAttach: typeof canAttach;
+  canReplace: typeof canReplace;
+  canDrop: typeof canDrop;
+  canInsert: typeof canInsert;
+  canCreate: typeof canCreate;
+  canConnect: typeof canConnect;
+  canResize: typeof canResize;
+  canCopy: typeof canCopy;
 }
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-type Connection = import('../../model/Types').Connection;
-type Element = import('../../model/Types').Element;
-type Shape = import('../../model/Types').Shape;
-type ModdleElement = import('../../model/Types').ModdleElement;
-type Point = import('diagram-js/lib/util/Types').Point;
-type Rect = import('diagram-js/lib/util/Types').Rect;
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+type Connection = import("../../model/Types").Connection;
+type Element = import("../../model/Types").Element;
+type Shape = import("../../model/Types").Shape;
+type ModdleElement = import("../../model/Types").ModdleElement;
+type Point = import("diagram-js/lib/util/Types").Point;
+type Rect = import("diagram-js/lib/util/Types").Rect;
 
-export type CanConnectResult = {
-    associationDirection?: string;
-    type: string;
-} | boolean | null;
+export type CanConnectResult =
+  | {
+      associationDirection?: string;
+      type: string;
+    }
+  | boolean
+  | null;
 
-export type CanReplaceResult = {
-    id: string;
-    type: string;
-} | boolean;
+export type CanReplaceResult =
+  | {
+      id: string;
+      type: string;
+    }
+  | boolean;
 
-import RuleProvider from 'diagram-js/lib/features/rules/RuleProvider';
-
-/**
- * @param source
- * @param target
- *
- * @return
- */
-declare function canConnectMessageFlow(source: Element, target: Element): boolean;
+import RuleProvider from "diagram-js/lib/features/rules/RuleProvider";
 
 /**
  * @param source
@@ -52,7 +49,10 @@ declare function canConnectMessageFlow(source: Element, target: Element): boolea
  *
  * @return
  */
-declare function canConnectSequenceFlow(source: Element, target: Element): boolean;
+declare function canConnectMessageFlow(
+  source: Element,
+  target: Element,
+): boolean;
 
 /**
  * @param source
@@ -60,7 +60,10 @@ declare function canConnectSequenceFlow(source: Element, target: Element): boole
  *
  * @return
  */
-declare function canConnectDataAssociation(source: Element, target: Element): CanConnectResult;
+declare function canConnectSequenceFlow(
+  source: Element,
+  target: Element,
+): boolean;
 
 /**
  * @param source
@@ -68,7 +71,21 @@ declare function canConnectDataAssociation(source: Element, target: Element): Ca
  *
  * @return
  */
-declare function canConnectAssociation(source: Element, target: Element): CanConnectResult;
+declare function canConnectDataAssociation(
+  source: Element,
+  target: Element,
+): CanConnectResult;
+
+/**
+ * @param source
+ * @param target
+ *
+ * @return
+ */
+declare function canConnectAssociation(
+  source: Element,
+  target: Element,
+): CanConnectResult;
 
 /**
  * @param elements
@@ -88,7 +105,12 @@ declare function canMove(elements: Element[], target: Shape): boolean;
  *
  * @return
  */
-declare function canAttach(elements: Element[], target: Shape, source: Element, position?: Point): boolean | 'attach';
+declare function canAttach(
+  elements: Element[],
+  target: Shape,
+  source: Element,
+  position?: Point,
+): boolean | "attach";
 
 /**
  * Check whether the given elements can be replaced. Return all elements which
@@ -113,7 +135,11 @@ declare function canAttach(elements: Element[], target: Shape, source: Element, 
  *
  * @return
  */
-declare function canReplace(elements: Element[], target?: Shape, position?: Point): CanReplaceResult;
+declare function canReplace(
+  elements: Element[],
+  target?: Shape,
+  position?: Point,
+): CanReplaceResult;
 
 /**
  * Can an element be dropped into the target element.
@@ -132,7 +158,11 @@ declare function canDrop(element: Element, target: Shape): boolean;
  *
  * @return
  */
-declare function canInsert(shape: Shape, connection: Connection, position: Point): boolean;
+declare function canInsert(
+  shape: Shape,
+  connection: Connection,
+  position: Point,
+): boolean;
 
 /**
  * @param shape
@@ -142,7 +172,12 @@ declare function canInsert(shape: Shape, connection: Connection, position: Point
  *
  * @return
  */
-declare function canCreate(shape: Shape, target: Shape, source: Element, position: Point): boolean;
+declare function canCreate(
+  shape: Shape,
+  target: Shape,
+  source: Element,
+  position: Point,
+): boolean;
 
 /**
  * @param source
@@ -151,7 +186,11 @@ declare function canCreate(shape: Shape, target: Shape, source: Element, positio
  *
  * @return
  */
-declare function canConnect(source: Element, target: Element, connection: Connection): CanConnectResult;
+declare function canConnect(
+  source: Element,
+  target: Element,
+  connection: Connection,
+): CanConnectResult;
 
 /**
  * @param shape

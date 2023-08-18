@@ -36,11 +36,14 @@ export function getLanesRoot(shape: Shape): Shape;
  *
  * @return
  */
-export function computeLanesResize(shape: Shape, newBounds: Rect): {
-    shape: Shape;
-    newBounds: Rect;
+export function computeLanesResize(
+  shape: Shape,
+  newBounds: Rect,
+): {
+  shape: Shape;
+  newBounds: Rect;
 }[];
 
 export const LANE_INDENTATION: number;
-type Shape = import('../../../model/Types').Shape;
-type Rect = import('diagram-js/lib/util/Types').Rect;
+type Shape = import("../../../model/Types").Shape;
+type Rect = import("diagram-js/lib/util/Types").Rect;

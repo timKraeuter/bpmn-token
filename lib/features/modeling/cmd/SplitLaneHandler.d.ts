@@ -17,6 +17,7 @@ export default class SplitLaneHandler implements CommandHandler {
   preExecute(context: any): void;
 }
 
-type CommandHandler = import('diagram-js/lib/command/CommandHandler').default;
-type Modeling = import('../Modeling').default;
-export type Translate = typeof import("diagram-js/lib/i18n/translate/translate").default;
+type CommandHandler = import("diagram-js/lib/command/CommandHandler").default;
+type Modeling = import("../Modeling").default;
+export type Translate =
+  typeof import("diagram-js/lib/i18n/translate/translate").default;

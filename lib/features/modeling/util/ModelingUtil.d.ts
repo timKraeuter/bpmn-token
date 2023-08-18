@@ -6,7 +6,10 @@
  *
  * @return
  */
-export function getParent(element: Element, anyType: string | string[]): Element | null;
+export function getParent(
+  element: Element,
+  anyType: string | string[],
+): Element | null;
 
-type Element = import('../../../model/Types').Element;
+type Element = import("../../../model/Types").Element;
 export { is, isAny } from "../../../util/ModelUtil";

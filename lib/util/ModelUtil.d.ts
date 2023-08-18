@@ -16,7 +16,10 @@ export function is(element: Element | ModdleElement, type: string): boolean;
  *
  * @return
  */
-export function isAny(element: Element | ModdleElement, types: string[]): boolean;
+export function isAny(
+  element: Element | ModdleElement,
+  types: string[],
+): boolean;
 
 /**
  * Return the business object for a given element.
@@ -25,7 +28,9 @@ export function isAny(element: Element | ModdleElement, types: string[]): boolea
  *
  * @return
  */
-export function getBusinessObject(element: Element | ModdleElement): ModdleElement;
+export function getBusinessObject(
+  element: Element | ModdleElement,
+): ModdleElement;
 
 /**
  * Return the di object for a given element.
@@ -36,5 +41,5 @@ export function getBusinessObject(element: Element | ModdleElement): ModdleEleme
  */
 export function getDi(element: Element): ModdleElement;
 
-type Element = import('../model/Types').Element;
-type ModdleElement = import('../model/Types').ModdleElement;
+type Element = import("../model/Types").Element;
+type ModdleElement = import("../model/Types").ModdleElement;

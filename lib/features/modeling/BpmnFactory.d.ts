@@ -68,6 +68,6 @@ export default class BpmnFactory {
   createDiPlane(semantic: ModdleElement, attrs?: any): ModdleElement;
 }
 
-type Moddle = import('../../model/Types').Moddle;
-type ModdleElement = import('../../model/Types').ModdleElement;
-type Point = import('diagram-js/lib/util/Types').Point;
+type Moddle = import("../../model/Types").Moddle;
+type ModdleElement = import("../../model/Types").ModdleElement;
+type Point = import("diagram-js/lib/util/Types").Point;

@@ -4,5 +4,5 @@
  */
 export default class NavigatedViewer extends Viewer {}
 
-type BaseViewerOptions = import('./BaseViewer').BaseViewerOptions;
-import Viewer from './Viewer';
+type BaseViewerOptions = import("./BaseViewer").BaseViewerOptions;
+import Viewer from "./Viewer";

@@ -25,7 +25,11 @@ export function createCategoryValue(bpmnFactory: BpmnFactory): any;
  *
  * @return
  */
-export function linkCategoryValue(categoryValue: any, category: any, definitions: any): any;
+export function linkCategoryValue(
+  categoryValue: any,
+  category: any,
+  definitions: any,
+): any;
 
 /**
  * Unlink category value from parent
@@ -45,5 +49,5 @@ export function unlinkCategoryValue(categoryValue: any): any;
  */
 export function unlinkCategory(category: any): any;
 
-type BpmnFactory = import('../../BpmnFactory').default;
+type BpmnFactory = import("../../BpmnFactory").default;
 export type ModdleElement = any;

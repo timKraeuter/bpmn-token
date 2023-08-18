@@ -9,6 +9,7 @@
  */
 export function isDifferentType(element: Element): DifferentTypeValidator;
 
-type Element = import('../../../model/Types').Element;
-type PopupMenuTarget = import('diagram-js/lib/features/popup-menu/PopupMenu').PopupMenuTarget;
+type Element = import("../../../model/Types").Element;
+type PopupMenuTarget =
+  import("diagram-js/lib/features/popup-menu/PopupMenu").PopupMenuTarget;
 export type DifferentTypeValidator = (entry: PopupMenuTarget) => boolean;

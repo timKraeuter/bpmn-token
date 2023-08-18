@@ -12,7 +12,8 @@ export default class BpmnInteractionEvents {
   constructor(eventBus: EventBus, interactionEvents: InteractionEvents);
 }
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-type InteractionEvents = import('diagram-js/lib/features/interaction-events/InteractionEvents').default;
-type Element = import('../../model/Types').Element;
-type Shape = import('../../model/Types').Shape;
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+type InteractionEvents =
+  import("diagram-js/lib/features/interaction-events/InteractionEvents").default;
+type Element = import("../../model/Types").Element;
+type Shape = import("../../model/Types").Shape;

@@ -42,7 +42,10 @@ export default class BaseViewer extends Diagram {
    *
    * @return A promise resolving with warnings that were produced during the import.
    */
-  importXML(xml: string, bpmnDiagram?: ModdleElement | string): Promise<ImportXMLResult>;
+  importXML(
+    xml: string,
+    bpmnDiagram?: ModdleElement | string,
+  ): Promise<ImportXMLResult>;
 
   /**
    * Import parsed definitions and render a BPMN 2.0 diagram.
@@ -66,7 +69,10 @@ export default class BaseViewer extends Diagram {
    *
    * @return A promise resolving with warnings that were produced during the import.
    */
-  importDefinitions(definitions: ModdleElement, bpmnDiagram?: ModdleElement | string): Promise<ImportDefinitionsResult>;
+  importDefinitions(
+    definitions: ModdleElement,
+    bpmnDiagram?: ModdleElement | string,
+  ): Promise<ImportDefinitionsResult>;
 
   /**
    * Open diagram of previously imported XML.
@@ -154,7 +160,11 @@ export default class BaseViewer extends Diagram {
    * @param callback The callback.
    * @param that Value of `this` the callback will be called with.
    */
-  on<T>(events: string | string[], callback: EventBusEventCallback<T>, that?: any): any;
+  on<T>(
+    events: string | string[],
+    callback: EventBusEventCallback<T>,
+    that?: any,
+  ): any;
 
   /**
    * Register an event listener.
@@ -171,7 +181,7 @@ export default class BaseViewer extends Diagram {
     events: string | string[],
     priority: number,
     callback: EventBusEventCallback<T>,
-    that?: any
+    that?: any,
   ): any;
 
   /**
@@ -204,29 +214,30 @@ export default class BaseViewer extends Diagram {
   detach(): void;
 }
 
-type EventBusEventCallback<T> = import('diagram-js/lib/core/EventBus').EventBusEventCallback<T>;
-type ModuleDeclaration = import('didi').ModuleDeclaration;
-type Moddle = import('./model/Types').Moddle;
-type ModdleElement = import('./model/Types').ModdleElement;
-type ModdleExtension = import('./model/Types').ModdleExtension;
+type EventBusEventCallback<T> =
+  import("diagram-js/lib/core/EventBus").EventBusEventCallback<T>;
+type ModuleDeclaration = import("didi").ModuleDeclaration;
+type Moddle = import("./model/Types").Moddle;
+type ModdleElement = import("./model/Types").ModdleElement;
+type ModdleExtension = import("./model/Types").ModdleExtension;
 
 export type BaseViewerOptions = {
-    width?: number | string;
-    height?: number | string;
-    position?: string;
-    container?: string | HTMLElement;
-    moddleExtensions?: ModdleExtensions;
-    additionalModules?: ModuleDeclaration[];
+  width?: number | string;
+  height?: number | string;
+  position?: string;
+  container?: string | HTMLElement;
+  moddleExtensions?: ModdleExtensions;
+  additionalModules?: ModuleDeclaration[];
 } & Record<string, any>;
 
 export type ModdleElementsById = Record<string, ModdleElement>;
 
 export type ModdleExtensions = {
-    [key: string]: import("./model/Types").ModdleExtension;
+  [key: string]: import("./model/Types").ModdleExtension;
 };
 
 export type ImportXMLResult = {
-    warnings: string[];
+  warnings: string[];
 };
 
 export type ImportXMLError = ImportXMLResult & Error;
@@ -236,45 +247,45 @@ export type OpenResult = ImportXMLResult;
 export type OpenError = ImportXMLError;
 
 export type SaveXMLOptions = {
-    format?: boolean;
-    preamble?: boolean;
+  format?: boolean;
+  preamble?: boolean;
 };
 
 export type SaveXMLResult = {
-    xml?: string;
-    error?: Error;
+  xml?: string;
+  error?: Error;
 };
 
 export type SaveSVGResult = {
-    svg: string;
+  svg: string;
 };
 
 export type ImportParseStartEvent = {
-    xml: string;
+  xml: string;
 };
 
 export type ImportParseCompleteEvent = {
-    error?: ImportXMLError;
-    definitions?: ModdleElement;
-    elementsById?: ModdleElementsById;
-    references?: ModdleElement[];
-    warnings: string[];
+  error?: ImportXMLError;
+  definitions?: ModdleElement;
+  elementsById?: ModdleElementsById;
+  references?: ModdleElement[];
+  warnings: string[];
 };
 
 export type ImportDoneEvent = {
-    error?: ImportXMLError;
-    warnings: string[];
+  error?: ImportXMLError;
+  warnings: string[];
 };
 
 export type SaveXMLStartEvent = {
-    definitions: ModdleElement;
+  definitions: ModdleElement;
 };
 
 export type SaveXMLDoneEvent = SaveXMLResult;
 
 export type SaveSVGDoneEvent = {
-    error?: Error;
-    svg: string;
+  error?: Error;
+  svg: string;
 };
 
-import Diagram from 'diagram-js';
+import Diagram from "diagram-js";

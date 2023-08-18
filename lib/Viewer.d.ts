@@ -40,5 +40,5 @@
  */
 export default class Viewer extends BaseViewer {}
 
-type BaseViewerOptions = import('./BaseViewer').BaseViewerOptions;
-import BaseViewer from './BaseViewer';
+type BaseViewerOptions = import("./BaseViewer").BaseViewerOptions;
+import BaseViewer from "./BaseViewer";

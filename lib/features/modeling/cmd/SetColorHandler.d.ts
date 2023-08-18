@@ -13,6 +13,6 @@ export default class SetColorHandler implements CommandHandler {
   postExecute(context: any): void;
 }
 
-type CommandHandler = import('diagram-js/lib/command/CommandHandler').default;
-type CommandStack = import('diagram-js/lib/command/CommandStack').default;
-type ModdleElement = import('../../../model/Types').ModdleElement;
+type CommandHandler = import("diagram-js/lib/command/CommandHandler").default;
+type CommandStack = import("diagram-js/lib/command/CommandStack").default;
+type ModdleElement = import("../../../model/Types").ModdleElement;

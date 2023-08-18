@@ -60,16 +60,16 @@ export const SEQUENCE_FLOW: ReplaceOption[];
 export const PARTICIPANT: ReplaceOption[];
 export type LabelGetter = () => string;
 export type ReplaceOption = {
-    label: string | LabelGetter;
-    actionName: string;
-    className: string;
-    target?: {
-        type: string;
-        isExpanded?: boolean;
-        isInterrupting?: boolean;
-        triggeredByEvent?: boolean;
-        cancelActivity?: boolean;
-        eventDefinitionType?: string;
-        eventDefinitionAttrs?: Record<string, any>;
-    };
+  label: string | LabelGetter;
+  actionName: string;
+  className: string;
+  target?: {
+    type: string;
+    isExpanded?: boolean;
+    isInterrupting?: boolean;
+    triggeredByEvent?: boolean;
+    cancelActivity?: boolean;
+    eventDefinitionType?: string;
+    eventDefinitionAttrs?: Record<string, any>;
+  };
 };

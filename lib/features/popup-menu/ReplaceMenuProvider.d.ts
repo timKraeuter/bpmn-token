@@ -16,7 +16,15 @@ export default class ReplaceMenuProvider implements PopupMenuProvider {
    * @param rules
    * @param translate
    */
-  constructor(bpmnFactory: any, popupMenu: PopupMenu, modeling: any, moddle: Moddle, bpmnReplace: any, rules: any, translate: Translate);
+  constructor(
+    bpmnFactory: any,
+    popupMenu: PopupMenu,
+    modeling: any,
+    moddle: Moddle,
+    bpmnReplace: any,
+    rules: any,
+    translate: Translate,
+  );
 
   /**
    * @param target
@@ -30,21 +38,30 @@ export default class ReplaceMenuProvider implements PopupMenuProvider {
    *
    * @return
    */
-  getPopupMenuHeaderEntries(target: PopupMenuTarget): import("diagram-js/lib/features/popup-menu/PopupMenuProvider").PopupMenuHeaderEntries;
+  getPopupMenuHeaderEntries(
+    target: PopupMenuTarget,
+  ): import("diagram-js/lib/features/popup-menu/PopupMenuProvider").PopupMenuHeaderEntries;
 }
 
 export type BpmnFactory = any;
-type PopupMenu = import('diagram-js/lib/features/popup-menu/PopupMenu').default;
+type PopupMenu = import("diagram-js/lib/features/popup-menu/PopupMenu").default;
 export type Modeling = any;
 export type BpmnReplace = any;
 export type Rules = any;
-export type Translate = typeof import("diagram-js/lib/i18n/translate/translate").default;
-type Element = import('../../model/Types').Element;
-type Moddle = import('../../model/Types').Moddle;
-type PopupMenuEntries = import('diagram-js/lib/features/popup-menu/PopupMenuProvider').PopupMenuEntries;
-type PopupMenuEntry = import('diagram-js/lib/features/popup-menu/PopupMenuProvider').PopupMenuEntry;
-type PopupMenuEntryAction = import('diagram-js/lib/features/popup-menu/PopupMenuProvider').PopupMenuEntryAction;
-type PopupMenuHeaderEntries = import('diagram-js/lib/features/popup-menu/PopupMenuProvider').PopupMenuHeaderEntries;
-type PopupMenuProvider = import('diagram-js/lib/features/popup-menu/PopupMenuProvider').default;
-type PopupMenuTarget = import('diagram-js/lib/features/popup-menu/PopupMenu').PopupMenuTarget;
+export type Translate =
+  typeof import("diagram-js/lib/i18n/translate/translate").default;
+type Element = import("../../model/Types").Element;
+type Moddle = import("../../model/Types").Moddle;
+type PopupMenuEntries =
+  import("diagram-js/lib/features/popup-menu/PopupMenuProvider").PopupMenuEntries;
+type PopupMenuEntry =
+  import("diagram-js/lib/features/popup-menu/PopupMenuProvider").PopupMenuEntry;
+type PopupMenuEntryAction =
+  import("diagram-js/lib/features/popup-menu/PopupMenuProvider").PopupMenuEntryAction;
+type PopupMenuHeaderEntries =
+  import("diagram-js/lib/features/popup-menu/PopupMenuProvider").PopupMenuHeaderEntries;
+type PopupMenuProvider =
+  import("diagram-js/lib/features/popup-menu/PopupMenuProvider").default;
+type PopupMenuTarget =
+  import("diagram-js/lib/features/popup-menu/PopupMenu").PopupMenuTarget;
 export type ReplaceOption = any;

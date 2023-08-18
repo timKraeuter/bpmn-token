@@ -3,7 +3,7 @@ import type {
   Element as BaseElement,
   Label as BaseLabel,
   Root as BaseRoot,
-  Shape as BaseShape
+  Shape as BaseShape,
 } from "diagram-js/lib/model";
 
 export type Moddle = any;
@@ -13,7 +13,7 @@ export type ModdleElement = any;
 export type ModdleExtension = {};
 
 export type BpmnAttributes = {
-  associationDirection: 'None' | 'One' | 'Both';
+  associationDirection: "None" | "One" | "Both";
   cancelActivity: boolean;
   eventDefinitionType: string;
   isExpanded: boolean;

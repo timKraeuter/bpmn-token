@@ -6,7 +6,7 @@
  */
 export default class BaseModeler extends BaseViewer {}
 
-type BaseViewerOptions = import('./BaseViewer').BaseViewerOptions;
-type ModdleElementsById = import('./BaseViewer').ModdleElementsById;
-type ModdleElement = import('./model/Types').ModdleElement;
-import BaseViewer from './BaseViewer';
+type BaseViewerOptions = import("./BaseViewer").BaseViewerOptions;
+type ModdleElementsById = import("./BaseViewer").ModdleElementsById;
+type ModdleElement = import("./model/Types").ModdleElement;
+import BaseViewer from "./BaseViewer";

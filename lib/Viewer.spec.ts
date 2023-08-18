@@ -1,17 +1,17 @@
-import Viewer from './Viewer';
+import Viewer from "./Viewer";
 
-import { testViewer } from './BaseViewer.spec';
+import { testViewer } from "./BaseViewer.spec";
 
 const viewer = new Viewer({
-  container: 'container'
+  container: "container",
 });
 
 testViewer(viewer);
 
 const extendedViewer = new Viewer({
-  container: 'container',
+  container: "container",
   alignToOrigin: false,
   propertiesPanel: {
-    attachTo: '#properties-panel'
-  }
+    attachTo: "#properties-panel",
+  },
 });

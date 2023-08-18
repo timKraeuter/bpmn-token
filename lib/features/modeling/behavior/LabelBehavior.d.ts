@@ -8,7 +8,11 @@
  *
  * @return
  */
-export function getReferencePointDelta(referencePoint: Point, oldBounds: Rect, newBounds: Rect): Point;
+export function getReferencePointDelta(
+  referencePoint: Point,
+  oldBounds: Rect,
+  newBounds: Rect,
+): Point;
 
 /**
  * Generates the nearest point (reference point) for a given point
@@ -37,20 +41,25 @@ export function asEdges(bounds: Rect | Point): Line[];
  *
  */
 export default class LabelBehavior extends CommandInterceptor {
-    /**
-     * @param eventBus
-     * @param modeling
-     * @param bpmnFactory
-     * @param textRenderer
-     */
-    constructor(eventBus: EventBus, modeling: Modeling, bpmnFactory: BpmnFactory, textRenderer: TextRenderer);
+  /**
+   * @param eventBus
+   * @param modeling
+   * @param bpmnFactory
+   * @param textRenderer
+   */
+  constructor(
+    eventBus: EventBus,
+    modeling: Modeling,
+    bpmnFactory: BpmnFactory,
+    textRenderer: TextRenderer,
+  );
 }
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-type Modeling = import('../Modeling').default;
-type BpmnFactory = import('../BpmnFactory').default;
-type TextRenderer = import('../../../draw/TextRenderer').default;
-type Point = import('diagram-js/lib/util/Types').Point;
-type Rect = import('diagram-js/lib/util/Types').Rect;
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+type Modeling = import("../Modeling").default;
+type BpmnFactory = import("../BpmnFactory").default;
+type TextRenderer = import("../../../draw/TextRenderer").default;
+type Point = import("diagram-js/lib/util/Types").Point;
+type Rect = import("diagram-js/lib/util/Types").Rect;
 export type Line = Point[];
-import CommandInterceptor from 'diagram-js/lib/command/CommandInterceptor';
+import CommandInterceptor from "diagram-js/lib/command/CommandInterceptor";

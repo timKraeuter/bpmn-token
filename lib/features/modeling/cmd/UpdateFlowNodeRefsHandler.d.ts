@@ -16,6 +16,6 @@ export default class UpdateFlowNodeRefsHandler implements CommandHandler {
   revert(context: any): any[];
 }
 
-type CommandHandler = import('diagram-js/lib/command/CommandHandler').default;
-type ElementRegistry = import('diagram-js/lib/core/ElementRegistry').default;
-type Shape = import('../../../model/Types').Shape;
+type CommandHandler = import("diagram-js/lib/command/CommandHandler").default;
+type ElementRegistry = import("diagram-js/lib/core/ElementRegistry").default;
+type Shape = import("../../../model/Types").Shape;

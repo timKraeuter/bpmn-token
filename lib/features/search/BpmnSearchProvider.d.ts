@@ -12,7 +12,11 @@ export default class BpmnSearchProvider implements SearchPadProvider {
    * @param searchPad
    * @param canvas
    */
-  constructor(elementRegistry: ElementRegistry, searchPad: SearchPad, canvas: Canvas);
+  constructor(
+    elementRegistry: ElementRegistry,
+    searchPad: SearchPad,
+    canvas: Canvas,
+  );
 
   /**
    * @param pattern
@@ -22,8 +26,10 @@ export default class BpmnSearchProvider implements SearchPadProvider {
   find(pattern: string): SearchResult[];
 }
 
-type Canvas = import('diagram-js/lib/core/Canvas').default;
-type ElementRegistry = import('diagram-js/lib/core/ElementRegistry').default;
-type SearchPad = import('diagram-js/lib/features/search-pad/SearchPad').default;
-type SearchPadProvider = import('diagram-js/lib/features/search-pad/SearchPadProvider').default;
-type SearchResult = import('diagram-js/lib/features/search-pad/SearchPadProvider').SearchResult;
+type Canvas = import("diagram-js/lib/core/Canvas").default;
+type ElementRegistry = import("diagram-js/lib/core/ElementRegistry").default;
+type SearchPad = import("diagram-js/lib/features/search-pad/SearchPad").default;
+type SearchPadProvider =
+  import("diagram-js/lib/features/search-pad/SearchPadProvider").default;
+type SearchResult =
+  import("diagram-js/lib/features/search-pad/SearchPadProvider").SearchResult;

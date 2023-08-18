@@ -10,7 +10,15 @@ export default class LabelEditingProvider {
    * @param resizeHandles
    * @param textRenderer
    */
-  constructor(eventBus: EventBus, bpmnFactory: BpmnFactory, canvas: Canvas, directEditing: any, modeling: Modeling, resizeHandles: ResizeHandles, textRenderer: TextRenderer);
+  constructor(
+    eventBus: EventBus,
+    bpmnFactory: BpmnFactory,
+    canvas: Canvas,
+    directEditing: any,
+    modeling: Modeling,
+    resizeHandles: ResizeHandles,
+    textRenderer: TextRenderer,
+  );
 
   /**
    * Activate direct editing for activities and text annotations.
@@ -20,12 +28,12 @@ export default class LabelEditingProvider {
    * @return
    */
   activate(element: Element): {
-      text: string;
-      options?: {
-          autoResize?: boolean;
-          centerVertically?: boolean;
-          resizable?: boolean;
-      };
+    text: string;
+    options?: {
+      autoResize?: boolean;
+      centerVertically?: boolean;
+      resizable?: boolean;
+    };
   } & DirectEditingContext;
 
   /**
@@ -37,26 +45,32 @@ export default class LabelEditingProvider {
    */
   getEditingBBox(element: Element): DirectEditingContext;
 
-  update(element: any, newLabel: any, activeContextText: any, bounds: any): void;
+  update(
+    element: any,
+    newLabel: any,
+    activeContextText: any,
+    bounds: any,
+  ): void;
 }
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-type BpmnFactory = import('../modeling/BpmnFactory').default;
-type Canvas = import('diagram-js/lib/core/Canvas').default;
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+type BpmnFactory = import("../modeling/BpmnFactory").default;
+type Canvas = import("diagram-js/lib/core/Canvas").default;
 export type DirectEditing = any;
-type Modeling = import('../modeling/Modeling').default;
-type ResizeHandles = import('diagram-js/lib/features/resize/ResizeHandles').default;
-type TextRenderer = import('../../draw/TextRenderer').default;
-type Element = import('../../model/Types').Element;
+type Modeling = import("../modeling/Modeling").default;
+type ResizeHandles =
+  import("diagram-js/lib/features/resize/ResizeHandles").default;
+type TextRenderer = import("../../draw/TextRenderer").default;
+type Element = import("../../model/Types").Element;
 
 export type DirectEditingContext = {
-    bounds: {
-        x: number;
-        y: number;
-        width: number;
-        height: number;
-        minWidth?: number;
-        minHeight?: number;
-    };
-    style: any;
+  bounds: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    minWidth?: number;
+    minHeight?: number;
+  };
+  style: any;
 };

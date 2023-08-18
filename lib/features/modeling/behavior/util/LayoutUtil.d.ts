@@ -10,7 +10,7 @@ export function findNewLineStartIndex(
   oldWaypoints: Point[],
   newWaypoints: Point[],
   attachment: Attachment,
-  hints: FindNewLineStartIndexHints
+  hints: FindNewLineStartIndexHints,
 ): number;
 
 /**
@@ -24,25 +24,30 @@ export function findNewLineStartIndex(
  *
  * @return result
  */
-export function getAnchorPointAdjustment(position: Point, newWaypoints: Point[], oldWaypoints: Point[], hints: FindNewLineStartIndexHints): AnchorPointAdjustment;
+export function getAnchorPointAdjustment(
+  position: Point,
+  newWaypoints: Point[],
+  oldWaypoints: Point[],
+  hints: FindNewLineStartIndexHints,
+): AnchorPointAdjustment;
 
-type Point = import('diagram-js/lib/util/Types').Point;
-type Attachment = import('./LineAttachmentUtil').Attachment;
+type Point = import("diagram-js/lib/util/Types").Point;
+type Attachment = import("./LineAttachmentUtil").Attachment;
 
 export type AnchorPointAdjustment = {
-    point: Point;
-    delta: Point;
+  point: Point;
+  delta: Point;
 };
 
 export type FindNewLineStartIndexHints = {
-    segmentMove?: {
-        segmentStartIndex: number;
-        newSegmentStartIndex: number;
-    };
-    bendpointMove?: {
-        insert: boolean;
-        bendpointIndex: number;
-    };
-    connectionStart: boolean;
-    connectionEnd: boolean;
+  segmentMove?: {
+    segmentStartIndex: number;
+    newSegmentStartIndex: number;
+  };
+  bendpointMove?: {
+    insert: boolean;
+    bendpointIndex: number;
+  };
+  connectionStart: boolean;
+  connectionEnd: boolean;
 };

@@ -35,5 +35,5 @@ export function toPlaneId(id: string): string;
 export function isPlane(element: Element | ModdleElement): boolean;
 
 export const planeSuffix: string;
-type Element = import('../model/Types').Element;
-type ModdleElement = import('../model/Types').ModdleElement;
+type Element = import("../model/Types").Element;
+type ModdleElement = import("../model/Types").ModdleElement;

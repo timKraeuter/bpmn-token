@@ -77,8 +77,8 @@ export default class Modeler extends BaseModeler {
   createDiagram(): Promise<ImportXMLResult>;
 }
 
-type BaseViewerOptions = import('./BaseViewer').BaseViewerOptions;
-type ImportXMLResult = import('./BaseViewer').ImportXMLResult;
-import BaseModeler from './BaseModeler';
-import Viewer from './Viewer';
-import NavigatedViewer from './NavigatedViewer';
+type BaseViewerOptions = import("./BaseViewer").BaseViewerOptions;
+type ImportXMLResult = import("./BaseViewer").ImportXMLResult;
+import BaseModeler from "./BaseModeler";
+import Viewer from "./Viewer";
+import NavigatedViewer from "./NavigatedViewer";

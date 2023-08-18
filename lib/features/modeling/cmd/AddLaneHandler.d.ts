@@ -17,6 +17,6 @@ export default class AddLaneHandler implements CommandHandler {
   preExecute(context: any): void;
 }
 
-type CommandHandler = import('diagram-js/lib/command/CommandHandler').default;
-type Modeling = import('../Modeling').default;
-type SpaceTool = import('../../space-tool/BpmnSpaceTool').default;
+type CommandHandler = import("diagram-js/lib/command/CommandHandler").default;
+type Modeling = import("../Modeling").default;
+type SpaceTool = import("../../space-tool/BpmnSpaceTool").default;

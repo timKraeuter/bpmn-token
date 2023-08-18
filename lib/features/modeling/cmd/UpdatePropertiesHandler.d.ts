@@ -20,7 +20,13 @@ export default class UpdatePropertiesHandler implements CommandHandler {
    * @param modeling
    * @param textRenderer
    */
-  constructor(elementRegistry: ElementRegistry, moddle: Moddle, translate: Translate, modeling: Modeling, textRenderer: TextRenderer);
+  constructor(
+    elementRegistry: ElementRegistry,
+    moddle: Moddle,
+    translate: Translate,
+    modeling: Modeling,
+    textRenderer: TextRenderer,
+  );
 
   /**
    * Update a BPMN element's properties.
@@ -29,10 +35,12 @@ export default class UpdatePropertiesHandler implements CommandHandler {
    *
    * @return
    */
-  execute(context: {
+  execute(
+    context: {
       element: Element;
       properties: Record<string, any>;
-  } & CommandContext): Element[];
+    } & CommandContext,
+  ): Element[];
 
   postExecute(context: any): void;
 
@@ -43,18 +51,22 @@ export default class UpdatePropertiesHandler implements CommandHandler {
    *
    * @return
    */
-  revert(context: {
+  revert(
+    context: {
       element: Element;
       properties: Record<string, any>;
       oldProperties: Record<string, any>;
-  } & CommandContext): Element[];
+    } & CommandContext,
+  ): Element[];
 }
 
-type CommandHandler = import('diagram-js/lib/command/CommandHandler').default;
-type CommandContext = import('diagram-js/lib/command/CommandStack').CommandContext;
-type ElementRegistry = import('diagram-js/lib/core/ElementRegistry').default;
-type Moddle = import('../../../model/Types').Moddle;
-export type Translate = typeof import("diagram-js/lib/i18n/translate/translate").default;
-type Modeling = import('../Modeling').default;
-type TextRenderer = import('../../../draw/TextRenderer').default;
-type Element = import('../../../model/Types').Element;
+type CommandHandler = import("diagram-js/lib/command/CommandHandler").default;
+type CommandContext =
+  import("diagram-js/lib/command/CommandStack").CommandContext;
+type ElementRegistry = import("diagram-js/lib/core/ElementRegistry").default;
+type Moddle = import("../../../model/Types").Moddle;
+export type Translate =
+  typeof import("diagram-js/lib/i18n/translate/translate").default;
+type Modeling = import("../Modeling").default;
+type TextRenderer = import("../../../draw/TextRenderer").default;
+type Element = import("../../../model/Types").Element;

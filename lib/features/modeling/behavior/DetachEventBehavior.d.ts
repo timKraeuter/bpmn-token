@@ -10,6 +10,6 @@ export default class DetachEventBehavior extends CommandInterceptor {
   constructor(bpmnReplace: BpmnReplace, injector: Injector);
 }
 
-type BpmnReplace = import('../../replace/BpmnReplace').default;
-type Injector = import('didi').Injector;
-import CommandInterceptor from 'diagram-js/lib/command/CommandInterceptor';
+type BpmnReplace = import("../../replace/BpmnReplace").default;
+type Injector = import("didi").Injector;
+import CommandInterceptor from "diagram-js/lib/command/CommandInterceptor";

@@ -4,8 +4,11 @@
  *
  * @return
  */
-export function getBoundaryAttachment(position: Point, targetBounds: Rect): DirectionTRBL | null;
+export function getBoundaryAttachment(
+  position: Point,
+  targetBounds: Rect,
+): DirectionTRBL | null;
 
-type DirectionTRBL = import('diagram-js/lib/util/Types').DirectionTRBL;
-type Point = import('diagram-js/lib/util/Types').Point;
-type Rect = import('diagram-js/lib/util/Types').Rect;
+type DirectionTRBL = import("diagram-js/lib/util/Types").DirectionTRBL;
+type Point = import("diagram-js/lib/util/Types").Point;
+type Rect = import("diagram-js/lib/util/Types").Rect;

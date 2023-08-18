@@ -15,6 +15,6 @@ export default class UpdateCanvasRootHandler implements CommandHandler {
   revert(context: any): any[];
 }
 
-type CommandHandler = import('diagram-js/lib/command/CommandHandler').default;
-type Canvas = import('diagram-js/lib/core/Canvas').default;
-type Modeling = import('../Modeling').default;
+type CommandHandler = import("diagram-js/lib/command/CommandHandler").default;
+type Canvas = import("diagram-js/lib/core/Canvas").default;
+type Modeling = import("../Modeling").default;

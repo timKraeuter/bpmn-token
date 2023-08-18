@@ -44,7 +44,11 @@ export function getStrokeColor(element: any, defaultColor?: string): string;
  *
  * @return
  */
-export function getLabelColor(element: any, defaultColor?: string, defaultStrokeColor?: string): string;
+export function getLabelColor(
+  element: any,
+  defaultColor?: string,
+  defaultStrokeColor?: string,
+): string;
 /**
  * @param shape
  *

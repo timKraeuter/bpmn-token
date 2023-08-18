@@ -1,4 +1,7 @@
-export function getPropertyNames(descriptor: any, keepDefaultProperties: any): any[];
+export function getPropertyNames(
+  descriptor: any,
+  keepDefaultProperties: any,
+): any[];
 
 /**
  * Utility for copying model properties from source element to target element.
@@ -24,7 +27,12 @@ export default class ModdleCopy {
    *
    * @return
    */
-  copyElement(sourceElement: ModdleElement, targetElement: ModdleElement, propertyNames?: string[], clone?: boolean): ModdleElement;
+  copyElement(
+    sourceElement: ModdleElement,
+    targetElement: ModdleElement,
+    propertyNames?: string[],
+    clone?: boolean,
+  ): ModdleElement;
 
   /**
    * Copy model property.
@@ -36,10 +44,15 @@ export default class ModdleCopy {
    *
    * @return
    */
-  copyProperty(property: any, parent: ModdleElement, propertyName: string, clone?: boolean): any;
+  copyProperty(
+    property: any,
+    parent: ModdleElement,
+    propertyName: string,
+    clone?: boolean,
+  ): any;
 }
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-type BpmnFactory = import('../modeling/BpmnFactory').default;
-type Moddle = import('../../model/Types').Moddle;
-type ModdleElement = import('../../model/Types').ModdleElement;
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+type BpmnFactory = import("../modeling/BpmnFactory").default;
+type Moddle = import("../../model/Types").Moddle;
+type ModdleElement = import("../../model/Types").ModdleElement;

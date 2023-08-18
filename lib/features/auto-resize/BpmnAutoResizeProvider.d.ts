@@ -20,7 +20,7 @@ export default class BpmnAutoResizeProvider extends AutoResizeProvider {
   canResize(elements: Shape[], target: Shape): boolean;
 }
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-type Modeling = import('../modeling/Modeling').default;
-type Shape = import('../../model/Types').Shape;
-import AutoResizeProvider from 'diagram-js/lib/features/auto-resize/AutoResizeProvider';
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+type Modeling = import("../modeling/Modeling").default;
+type Shape = import("../../model/Types").Shape;
+import AutoResizeProvider from "diagram-js/lib/features/auto-resize/AutoResizeProvider";

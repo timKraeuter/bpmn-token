@@ -18,5 +18,5 @@ export default class IdClaimHandler implements CommandHandler {
   revert(context: any): any[];
 }
 
-type CommandHandler = import('diagram-js/lib/command/CommandHandler').default;
-type Moddle = import('../../../model/Types').Moddle;
+type CommandHandler = import("diagram-js/lib/command/CommandHandler").default;
+type Moddle = import("../../../model/Types").Moddle;

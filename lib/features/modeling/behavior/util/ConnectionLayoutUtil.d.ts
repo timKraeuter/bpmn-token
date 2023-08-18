@@ -12,8 +12,9 @@ export function getConnectionAdjustment(
   position: Point,
   newWaypoints: Point[],
   oldWaypoints: Point[],
-  hints: FindNewLineStartIndexHints
+  hints: FindNewLineStartIndexHints,
 ): Point;
 
-type Point = import('diagram-js/lib/util/Types').Point;
-type FindNewLineStartIndexHints = import('./LayoutUtil').FindNewLineStartIndexHints;
+type Point = import("diagram-js/lib/util/Types").Point;
+type FindNewLineStartIndexHints =
+  import("./LayoutUtil").FindNewLineStartIndexHints;

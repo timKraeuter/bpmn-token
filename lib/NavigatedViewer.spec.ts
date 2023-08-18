@@ -1,17 +1,17 @@
-import NavigatedViewer from './NavigatedViewer';
+import NavigatedViewer from "./NavigatedViewer";
 
-import { testViewer } from './BaseViewer.spec';
+import { testViewer } from "./BaseViewer.spec";
 
 const viewer = new NavigatedViewer({
-  container: 'container'
+  container: "container",
 });
 
 testViewer(viewer);
 
 const extendedViewer = new NavigatedViewer({
-  container: 'container',
+  container: "container",
   alignToOrigin: false,
   propertiesPanel: {
-    attachTo: '#properties-panel'
-  }
+    attachTo: "#properties-panel",
+  },
 });

@@ -52,7 +52,10 @@ export function getExternalLabelMid(element: Element): Point;
  *
  * @return
  */
-export function getExternalLabelBounds(di: ModdleElement, element: Element): Rect;
+export function getExternalLabelBounds(
+  di: ModdleElement,
+  element: Element,
+): Rect;
 
 /**
  * @param element
@@ -72,12 +75,12 @@ export function setLabel(element: Element, text: string): Element;
 export { isLabel } from "diagram-js/lib/util/ModelUtil";
 
 export namespace DEFAULT_LABEL_SIZE {
-    const width: number;
-    const height: number;
+  const width: number;
+  const height: number;
 }
 
 export const FLOW_LABEL_INDENT: number;
-type Point = import('diagram-js/lib/util/Types').Point;
-type Rect = import('diagram-js/lib/util/Types').Rect;
-type Element = import('../model/Types').Element;
-type ModdleElement = import('../model/Types').ModdleElement;
+type Point = import("diagram-js/lib/util/Types").Point;
+type Rect = import("diagram-js/lib/util/Types").Rect;
+type Element = import("../model/Types").Element;
+type ModdleElement = import("../model/Types").ModdleElement;

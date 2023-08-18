@@ -9,5 +9,5 @@ export default class BpmnEditorActions extends EditorActions {
   constructor(injector: Injector);
 }
 
-type Injector = import('didi').Injector;
-import EditorActions from 'diagram-js/lib/features/editor-actions/EditorActions';
+type Injector = import("didi").Injector;
+import EditorActions from "diagram-js/lib/features/editor-actions/EditorActions";

@@ -3,8 +3,7 @@
  * distribution.
  *
  */
-export default class BpmnDistributeElements extends RuleProvider {
-}
+export default class BpmnDistributeElements extends RuleProvider {}
 
-type EventBus = import('diagram-js/lib/core/EventBus').default;
-import RuleProvider from 'diagram-js/lib/features/rules/RuleProvider';
+type EventBus = import("diagram-js/lib/core/EventBus").default;
+import RuleProvider from "diagram-js/lib/features/rules/RuleProvider";
