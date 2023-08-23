@@ -51,17 +51,16 @@
   },
   "dependencies": {
     "bpmn-font": "^0.12.1",
-    "bpmn-moddle": "^8.0.1",
     "diagram-js": "^12.2.0",
     "diagram-js-direct-editing": "^2.0.0",
     "ids": "^1.0.5",
     "inherits": "^2.0.4",
     "min-dash": "^4.0.0",
     "min-dom": "^4.1.0",
-    "moddle": "^6.2.3",
-    "moddle-xml": "^10.1.0",
     "object-refs": "^0.3.0",
     "tiny-svg": "^3.0.0",
-    "token-bpmn-moddle": "^1.0.1"
+    "bpmn-moddle": "^8.0.1",
+    "token-bpmn-moddle": "^1.0.2",
+    "moddle": "6.0.0"
   }
 }
