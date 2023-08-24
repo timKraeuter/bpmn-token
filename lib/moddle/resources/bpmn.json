@@ -2172,6 +2172,24 @@
       ]
     },
     {
+      "name": "TextAnnotation2",
+      "superClass": [
+        "Artifact"
+      ],
+      "properties": [
+        {
+          "name": "text",
+          "type": "String"
+        },
+        {
+          "name": "textFormat",
+          "default": "text/plain",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
       "name": "Group",
       "superClass": [
         "Artifact"

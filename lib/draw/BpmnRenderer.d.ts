@@ -150,6 +150,7 @@ export default class BpmnRenderer extends BaseRenderer {
     "bpmn:Group": (parentGfx: any, element: any) => SVGRectElement;
     label: (parentGfx: any, element: any) => SVGElement;
     "bpmn:TextAnnotation": (parentGfx: any, element: any) => SVGRectElement;
+    "bpmn:TextAnnotation2": (parentGfx: any, element: any) => SVGRectElement; // TODO: Token
     ParticipantMultiplicityMarker: (parentGfx: any, element: any) => void;
     SubProcessMarker: (parentGfx: any, element: any) => void;
     ParallelMarker: (parentGfx: any, element: any, position: any) => void;
