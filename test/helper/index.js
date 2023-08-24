@@ -25,8 +25,8 @@
  *
  * var fs = require('fs');
  *
- * // insert odm.css
- * insertCSS('odm.css', require('postit-js-core/assets/odm.css'));
+ * // insert bt.css
+ * insertCSS('bt.css', require('postit-js-core/assets/bt.css'));
  * ```
  */
 

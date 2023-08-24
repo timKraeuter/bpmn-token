@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-import "bpmn-token/assets/odm.css";
+import "bpmn-token/assets/bt.css";
 import TokenBPMNModeler from "bpmn-token/lib/Modeler";
 
 import emptyBoardXML from "../resources/initial.bpmn";
