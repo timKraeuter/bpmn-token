@@ -57,16 +57,12 @@
     {
       "name": "Node",
       "isAbstract": true,
-      "superClass": [
-        "DiagramElement"
-      ]
+      "superClass": ["DiagramElement"]
     },
     {
       "name": "Edge",
       "isAbstract": true,
-      "superClass": [
-        "DiagramElement"
-      ],
+      "superClass": ["DiagramElement"],
       "properties": [
         {
           "name": "source",
@@ -136,9 +132,7 @@
     {
       "name": "Shape",
       "isAbstract": true,
-      "superClass": [
-        "Node"
-      ],
+      "superClass": ["Node"],
       "properties": [
         {
           "name": "bounds",
@@ -149,9 +143,7 @@
     {
       "name": "Plane",
       "isAbstract": true,
-      "superClass": [
-        "Node"
-      ],
+      "superClass": ["Node"],
       "properties": [
         {
           "name": "planeElement",
@@ -164,9 +156,7 @@
     {
       "name": "LabeledEdge",
       "isAbstract": true,
-      "superClass": [
-        "Edge"
-      ],
+      "superClass": ["Edge"],
       "properties": [
         {
           "name": "ownedLabel",
@@ -181,9 +171,7 @@
     {
       "name": "LabeledShape",
       "isAbstract": true,
-      "superClass": [
-        "Shape"
-      ],
+      "superClass": ["Shape"],
       "properties": [
         {
           "name": "ownedLabel",
@@ -198,9 +186,7 @@
     {
       "name": "Label",
       "isAbstract": true,
-      "superClass": [
-        "Node"
-      ],
+      "superClass": ["Node"],
       "properties": [
         {
           "name": "bounds",

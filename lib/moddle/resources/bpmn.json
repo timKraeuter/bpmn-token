@@ -6,9 +6,7 @@
   "types": [
     {
       "name": "Interface",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "name",
@@ -29,9 +27,7 @@
     },
     {
       "name": "Operation",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "name",
@@ -63,21 +59,15 @@
     },
     {
       "name": "EndPoint",
-      "superClass": [
-        "RootElement"
-      ]
+      "superClass": ["RootElement"]
     },
     {
       "name": "Auditing",
-      "superClass": [
-        "BaseElement"
-      ]
+      "superClass": ["BaseElement"]
     },
     {
       "name": "GlobalTask",
-      "superClass": [
-        "CallableElement"
-      ],
+      "superClass": ["CallableElement"],
       "properties": [
         {
           "name": "resources",
@@ -88,22 +78,15 @@
     },
     {
       "name": "Monitoring",
-      "superClass": [
-        "BaseElement"
-      ]
+      "superClass": ["BaseElement"]
     },
     {
       "name": "Performer",
-      "superClass": [
-        "ResourceRole"
-      ]
+      "superClass": ["ResourceRole"]
     },
     {
       "name": "Process",
-      "superClass": [
-        "FlowElementsContainer",
-        "CallableElement"
-      ],
+      "superClass": ["FlowElementsContainer", "CallableElement"],
       "properties": [
         {
           "name": "processType",
@@ -176,9 +159,7 @@
     },
     {
       "name": "LaneSet",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "lanes",
@@ -194,9 +175,7 @@
     },
     {
       "name": "Lane",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "name",
@@ -230,21 +209,15 @@
     },
     {
       "name": "GlobalManualTask",
-      "superClass": [
-        "GlobalTask"
-      ]
+      "superClass": ["GlobalTask"]
     },
     {
       "name": "ManualTask",
-      "superClass": [
-        "Task"
-      ]
+      "superClass": ["Task"]
     },
     {
       "name": "UserTask",
-      "superClass": [
-        "Task"
-      ],
+      "superClass": ["Task"],
       "properties": [
         {
           "name": "renderings",
@@ -260,27 +233,19 @@
     },
     {
       "name": "Rendering",
-      "superClass": [
-        "BaseElement"
-      ]
+      "superClass": ["BaseElement"]
     },
     {
       "name": "HumanPerformer",
-      "superClass": [
-        "Performer"
-      ]
+      "superClass": ["Performer"]
     },
     {
       "name": "PotentialOwner",
-      "superClass": [
-        "HumanPerformer"
-      ]
+      "superClass": ["HumanPerformer"]
     },
     {
       "name": "GlobalUserTask",
-      "superClass": [
-        "GlobalTask"
-      ],
+      "superClass": ["GlobalTask"],
       "properties": [
         {
           "name": "implementation",
@@ -297,9 +262,7 @@
     {
       "name": "Gateway",
       "isAbstract": true,
-      "superClass": [
-        "FlowNode"
-      ],
+      "superClass": ["FlowNode"],
       "properties": [
         {
           "name": "gatewayDirection",
@@ -311,9 +274,7 @@
     },
     {
       "name": "EventBasedGateway",
-      "superClass": [
-        "Gateway"
-      ],
+      "superClass": ["Gateway"],
       "properties": [
         {
           "name": "instantiate",
@@ -331,9 +292,7 @@
     },
     {
       "name": "ComplexGateway",
-      "superClass": [
-        "Gateway"
-      ],
+      "superClass": ["Gateway"],
       "properties": [
         {
           "name": "activationCondition",
@@ -352,9 +311,7 @@
     },
     {
       "name": "ExclusiveGateway",
-      "superClass": [
-        "Gateway"
-      ],
+      "superClass": ["Gateway"],
       "properties": [
         {
           "name": "default",
@@ -366,9 +323,7 @@
     },
     {
       "name": "InclusiveGateway",
-      "superClass": [
-        "Gateway"
-      ],
+      "superClass": ["Gateway"],
       "properties": [
         {
           "name": "default",
@@ -380,22 +335,16 @@
     },
     {
       "name": "ParallelGateway",
-      "superClass": [
-        "Gateway"
-      ]
+      "superClass": ["Gateway"]
     },
     {
       "name": "RootElement",
       "isAbstract": true,
-      "superClass": [
-        "BaseElement"
-      ]
+      "superClass": ["BaseElement"]
     },
     {
       "name": "Relationship",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "type",
@@ -531,9 +480,7 @@
     },
     {
       "name": "Documentation",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "text",
@@ -551,10 +498,7 @@
     {
       "name": "Event",
       "isAbstract": true,
-      "superClass": [
-        "FlowNode",
-        "InteractionNode"
-      ],
+      "superClass": ["FlowNode", "InteractionNode"],
       "properties": [
         {
           "name": "properties",
@@ -565,27 +509,19 @@
     },
     {
       "name": "IntermediateCatchEvent",
-      "superClass": [
-        "CatchEvent"
-      ]
+      "superClass": ["CatchEvent"]
     },
     {
       "name": "IntermediateThrowEvent",
-      "superClass": [
-        "ThrowEvent"
-      ]
+      "superClass": ["ThrowEvent"]
     },
     {
       "name": "EndEvent",
-      "superClass": [
-        "ThrowEvent"
-      ]
+      "superClass": ["ThrowEvent"]
     },
     {
       "name": "StartEvent",
-      "superClass": [
-        "CatchEvent"
-      ],
+      "superClass": ["CatchEvent"],
       "properties": [
         {
           "name": "isInterrupting",
@@ -598,9 +534,7 @@
     {
       "name": "ThrowEvent",
       "isAbstract": true,
-      "superClass": [
-        "Event"
-      ],
+      "superClass": ["Event"],
       "properties": [
         {
           "name": "dataInputs",
@@ -632,9 +566,7 @@
     {
       "name": "CatchEvent",
       "isAbstract": true,
-      "superClass": [
-        "Event"
-      ],
+      "superClass": ["Event"],
       "properties": [
         {
           "name": "parallelMultiple",
@@ -671,9 +603,7 @@
     },
     {
       "name": "BoundaryEvent",
-      "superClass": [
-        "CatchEvent"
-      ],
+      "superClass": ["CatchEvent"],
       "properties": [
         {
           "name": "cancelActivity",
@@ -692,21 +622,15 @@
     {
       "name": "EventDefinition",
       "isAbstract": true,
-      "superClass": [
-        "RootElement"
-      ]
+      "superClass": ["RootElement"]
     },
     {
       "name": "CancelEventDefinition",
-      "superClass": [
-        "EventDefinition"
-      ]
+      "superClass": ["EventDefinition"]
     },
     {
       "name": "ErrorEventDefinition",
-      "superClass": [
-        "EventDefinition"
-      ],
+      "superClass": ["EventDefinition"],
       "properties": [
         {
           "name": "errorRef",
@@ -718,15 +642,11 @@
     },
     {
       "name": "TerminateEventDefinition",
-      "superClass": [
-        "EventDefinition"
-      ]
+      "superClass": ["EventDefinition"]
     },
     {
       "name": "EscalationEventDefinition",
-      "superClass": [
-        "EventDefinition"
-      ],
+      "superClass": ["EventDefinition"],
       "properties": [
         {
           "name": "escalationRef",
@@ -756,15 +676,11 @@
           "type": "String"
         }
       ],
-      "superClass": [
-        "RootElement"
-      ]
+      "superClass": ["RootElement"]
     },
     {
       "name": "CompensateEventDefinition",
-      "superClass": [
-        "EventDefinition"
-      ],
+      "superClass": ["EventDefinition"],
       "properties": [
         {
           "name": "waitForCompletion",
@@ -782,9 +698,7 @@
     },
     {
       "name": "TimerEventDefinition",
-      "superClass": [
-        "EventDefinition"
-      ],
+      "superClass": ["EventDefinition"],
       "properties": [
         {
           "name": "timeDate",
@@ -811,9 +725,7 @@
     },
     {
       "name": "LinkEventDefinition",
-      "superClass": [
-        "EventDefinition"
-      ],
+      "superClass": ["EventDefinition"],
       "properties": [
         {
           "name": "name",
@@ -835,9 +747,7 @@
     },
     {
       "name": "MessageEventDefinition",
-      "superClass": [
-        "EventDefinition"
-      ],
+      "superClass": ["EventDefinition"],
       "properties": [
         {
           "name": "messageRef",
@@ -855,9 +765,7 @@
     },
     {
       "name": "ConditionalEventDefinition",
-      "superClass": [
-        "EventDefinition"
-      ],
+      "superClass": ["EventDefinition"],
       "properties": [
         {
           "name": "condition",
@@ -870,9 +778,7 @@
     },
     {
       "name": "SignalEventDefinition",
-      "superClass": [
-        "EventDefinition"
-      ],
+      "superClass": ["EventDefinition"],
       "properties": [
         {
           "name": "signalRef",
@@ -884,9 +790,7 @@
     },
     {
       "name": "Signal",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "structureRef",
@@ -903,15 +807,11 @@
     },
     {
       "name": "ImplicitThrowEvent",
-      "superClass": [
-        "ThrowEvent"
-      ]
+      "superClass": ["ThrowEvent"]
     },
     {
       "name": "DataState",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "name",
@@ -922,9 +822,7 @@
     },
     {
       "name": "ItemAwareElement",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "itemSubjectRef",
@@ -940,9 +838,7 @@
     },
     {
       "name": "DataAssociation",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "sourceRef",
@@ -971,9 +867,7 @@
     },
     {
       "name": "DataInput",
-      "superClass": [
-        "ItemAwareElement"
-      ],
+      "superClass": ["ItemAwareElement"],
       "properties": [
         {
           "name": "name",
@@ -1011,9 +905,7 @@
     },
     {
       "name": "DataOutput",
-      "superClass": [
-        "ItemAwareElement"
-      ],
+      "superClass": ["ItemAwareElement"],
       "properties": [
         {
           "name": "name",
@@ -1051,9 +943,7 @@
     },
     {
       "name": "InputSet",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "name",
@@ -1088,9 +978,7 @@
     },
     {
       "name": "OutputSet",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "dataOutputRefs",
@@ -1125,9 +1013,7 @@
     },
     {
       "name": "Property",
-      "superClass": [
-        "ItemAwareElement"
-      ],
+      "superClass": ["ItemAwareElement"],
       "properties": [
         {
           "name": "name",
@@ -1138,21 +1024,15 @@
     },
     {
       "name": "DataInputAssociation",
-      "superClass": [
-        "DataAssociation"
-      ]
+      "superClass": ["DataAssociation"]
     },
     {
       "name": "DataOutputAssociation",
-      "superClass": [
-        "DataAssociation"
-      ]
+      "superClass": ["DataAssociation"]
     },
     {
       "name": "InputOutputSpecification",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "dataInputs",
@@ -1178,10 +1058,7 @@
     },
     {
       "name": "DataObject",
-      "superClass": [
-        "FlowElement",
-        "ItemAwareElement"
-      ],
+      "superClass": ["FlowElement", "ItemAwareElement"],
       "properties": [
         {
           "name": "isCollection",
@@ -1216,9 +1093,7 @@
     },
     {
       "name": "Assignment",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "from",
@@ -1238,10 +1113,7 @@
     },
     {
       "name": "DataStore",
-      "superClass": [
-        "RootElement",
-        "ItemAwareElement"
-      ],
+      "superClass": ["RootElement", "ItemAwareElement"],
       "properties": [
         {
           "name": "name",
@@ -1263,10 +1135,7 @@
     },
     {
       "name": "DataStoreReference",
-      "superClass": [
-        "ItemAwareElement",
-        "FlowElement"
-      ],
+      "superClass": ["ItemAwareElement", "FlowElement"],
       "properties": [
         {
           "name": "dataStoreRef",
@@ -1278,10 +1147,7 @@
     },
     {
       "name": "DataObjectReference",
-      "superClass": [
-        "ItemAwareElement",
-        "FlowElement"
-      ],
+      "superClass": ["ItemAwareElement", "FlowElement"],
       "properties": [
         {
           "name": "dataObjectRef",
@@ -1293,9 +1159,7 @@
     },
     {
       "name": "ConversationLink",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "sourceRef",
@@ -1318,9 +1182,7 @@
     },
     {
       "name": "ConversationAssociation",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "innerConversationNodeRef",
@@ -1338,9 +1200,7 @@
     },
     {
       "name": "CallConversation",
-      "superClass": [
-        "ConversationNode"
-      ],
+      "superClass": ["ConversationNode"],
       "properties": [
         {
           "name": "calledCollaborationRef",
@@ -1357,15 +1217,11 @@
     },
     {
       "name": "Conversation",
-      "superClass": [
-        "ConversationNode"
-      ]
+      "superClass": ["ConversationNode"]
     },
     {
       "name": "SubConversation",
-      "superClass": [
-        "ConversationNode"
-      ],
+      "superClass": ["ConversationNode"],
       "properties": [
         {
           "name": "conversationNodes",
@@ -1377,10 +1233,7 @@
     {
       "name": "ConversationNode",
       "isAbstract": true,
-      "superClass": [
-        "InteractionNode",
-        "BaseElement"
-      ],
+      "superClass": ["InteractionNode", "BaseElement"],
       "properties": [
         {
           "name": "name",
@@ -1408,15 +1261,11 @@
     },
     {
       "name": "GlobalConversation",
-      "superClass": [
-        "Collaboration"
-      ]
+      "superClass": ["Collaboration"]
     },
     {
       "name": "PartnerEntity",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "name",
@@ -1433,9 +1282,7 @@
     },
     {
       "name": "PartnerRole",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "name",
@@ -1452,9 +1299,7 @@
     },
     {
       "name": "CorrelationProperty",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "correlationPropertyRetrievalExpression",
@@ -1476,9 +1321,7 @@
     },
     {
       "name": "Error",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "structureRef",
@@ -1500,9 +1343,7 @@
     },
     {
       "name": "CorrelationKey",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "correlationPropertyRef",
@@ -1519,9 +1360,7 @@
     },
     {
       "name": "Expression",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "isAbstract": false,
       "properties": [
         {
@@ -1533,9 +1372,7 @@
     },
     {
       "name": "FormalExpression",
-      "superClass": [
-        "Expression"
-      ],
+      "superClass": ["Expression"],
       "properties": [
         {
           "name": "language",
@@ -1552,9 +1389,7 @@
     },
     {
       "name": "Message",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "name",
@@ -1571,9 +1406,7 @@
     },
     {
       "name": "ItemDefinition",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "itemKind",
@@ -1602,9 +1435,7 @@
     {
       "name": "FlowElement",
       "isAbstract": true,
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "name",
@@ -1629,9 +1460,7 @@
     },
     {
       "name": "SequenceFlow",
-      "superClass": [
-        "FlowElement"
-      ],
+      "superClass": ["FlowElement"],
       "properties": [
         {
           "name": "isImmediate",
@@ -1662,9 +1491,7 @@
     {
       "name": "FlowElementsContainer",
       "isAbstract": true,
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "laneSets",
@@ -1681,9 +1508,7 @@
     {
       "name": "CallableElement",
       "isAbstract": true,
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "name",
@@ -1716,9 +1541,7 @@
     {
       "name": "FlowNode",
       "isAbstract": true,
-      "superClass": [
-        "FlowElement"
-      ],
+      "superClass": ["FlowElement"],
       "properties": [
         {
           "name": "incoming",
@@ -1743,9 +1566,7 @@
     },
     {
       "name": "CorrelationPropertyRetrievalExpression",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "messagePath",
@@ -1761,9 +1582,7 @@
     },
     {
       "name": "CorrelationPropertyBinding",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "dataPath",
@@ -1779,9 +1598,7 @@
     },
     {
       "name": "Resource",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "name",
@@ -1797,9 +1614,7 @@
     },
     {
       "name": "ResourceParameter",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "name",
@@ -1821,9 +1636,7 @@
     },
     {
       "name": "CorrelationSubscription",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "correlationKeyRef",
@@ -1840,9 +1653,7 @@
     },
     {
       "name": "MessageFlow",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "name",
@@ -1871,9 +1682,7 @@
     },
     {
       "name": "MessageFlowAssociation",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "innerMessageFlowRef",
@@ -1911,10 +1720,7 @@
     },
     {
       "name": "Participant",
-      "superClass": [
-        "InteractionNode",
-        "BaseElement"
-      ],
+      "superClass": ["InteractionNode", "BaseElement"],
       "properties": [
         {
           "name": "name",
@@ -1947,9 +1753,7 @@
     },
     {
       "name": "ParticipantAssociation",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "innerParticipantRef",
@@ -1981,15 +1785,11 @@
           "type": "Integer"
         }
       ],
-      "superClass": [
-        "BaseElement"
-      ]
+      "superClass": ["BaseElement"]
     },
     {
       "name": "Collaboration",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "name",
@@ -2056,9 +1856,7 @@
     {
       "name": "ChoreographyActivity",
       "isAbstract": true,
-      "superClass": [
-        "FlowNode"
-      ],
+      "superClass": ["FlowNode"],
       "properties": [
         {
           "name": "participantRef",
@@ -2087,9 +1885,7 @@
     },
     {
       "name": "CallChoreography",
-      "superClass": [
-        "ChoreographyActivity"
-      ],
+      "superClass": ["ChoreographyActivity"],
       "properties": [
         {
           "name": "calledChoreographyRef",
@@ -2106,10 +1902,7 @@
     },
     {
       "name": "SubChoreography",
-      "superClass": [
-        "ChoreographyActivity",
-        "FlowElementsContainer"
-      ],
+      "superClass": ["ChoreographyActivity", "FlowElementsContainer"],
       "properties": [
         {
           "name": "artifacts",
@@ -2120,9 +1913,7 @@
     },
     {
       "name": "ChoreographyTask",
-      "superClass": [
-        "ChoreographyActivity"
-      ],
+      "superClass": ["ChoreographyActivity"],
       "properties": [
         {
           "name": "messageFlowRef",
@@ -2134,16 +1925,11 @@
     },
     {
       "name": "Choreography",
-      "superClass": [
-        "Collaboration",
-        "FlowElementsContainer"
-      ]
+      "superClass": ["Collaboration", "FlowElementsContainer"]
     },
     {
       "name": "GlobalChoreographyTask",
-      "superClass": [
-        "Choreography"
-      ],
+      "superClass": ["Choreography"],
       "properties": [
         {
           "name": "initiatingParticipantRef",
@@ -2155,9 +1941,7 @@
     },
     {
       "name": "TextAnnotation",
-      "superClass": [
-        "Artifact"
-      ],
+      "superClass": ["Artifact"],
       "properties": [
         {
           "name": "text",
@@ -2173,9 +1957,7 @@
     },
     {
       "name": "Token",
-      "superClass": [
-        "Artifact"
-      ],
+      "superClass": ["Artifact"],
       "properties": [
         {
           "name": "text",
@@ -2191,9 +1973,7 @@
     },
     {
       "name": "ProcessSnapshot",
-      "superClass": [
-        "Artifact"
-      ],
+      "superClass": ["Artifact"],
       "properties": [
         {
           "name": "text",
@@ -2209,9 +1989,7 @@
     },
     {
       "name": "Group",
-      "superClass": [
-        "Artifact"
-      ],
+      "superClass": ["Artifact"],
       "properties": [
         {
           "name": "categoryValueRef",
@@ -2223,9 +2001,7 @@
     },
     {
       "name": "Association",
-      "superClass": [
-        "Artifact"
-      ],
+      "superClass": ["Artifact"],
       "properties": [
         {
           "name": "associationDirection",
@@ -2248,9 +2024,7 @@
     },
     {
       "name": "Category",
-      "superClass": [
-        "RootElement"
-      ],
+      "superClass": ["RootElement"],
       "properties": [
         {
           "name": "categoryValue",
@@ -2267,15 +2041,11 @@
     {
       "name": "Artifact",
       "isAbstract": true,
-      "superClass": [
-        "BaseElement"
-      ]
+      "superClass": ["BaseElement"]
     },
     {
       "name": "CategoryValue",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "categorizedFlowElements",
@@ -2294,9 +2064,7 @@
     {
       "name": "Activity",
       "isAbstract": true,
-      "superClass": [
-        "FlowNode"
-      ],
+      "superClass": ["FlowNode"],
       "properties": [
         {
           "name": "isForCompensation",
@@ -2363,9 +2131,7 @@
     },
     {
       "name": "ServiceTask",
-      "superClass": [
-        "Task"
-      ],
+      "superClass": ["Task"],
       "properties": [
         {
           "name": "implementation",
@@ -2382,11 +2148,7 @@
     },
     {
       "name": "SubProcess",
-      "superClass": [
-        "Activity",
-        "FlowElementsContainer",
-        "InteractionNode"
-      ],
+      "superClass": ["Activity", "FlowElementsContainer", "InteractionNode"],
       "properties": [
         {
           "name": "triggeredByEvent",
@@ -2404,15 +2166,11 @@
     {
       "name": "LoopCharacteristics",
       "isAbstract": true,
-      "superClass": [
-        "BaseElement"
-      ]
+      "superClass": ["BaseElement"]
     },
     {
       "name": "MultiInstanceLoopCharacteristics",
-      "superClass": [
-        "LoopCharacteristics"
-      ],
+      "superClass": ["LoopCharacteristics"],
       "properties": [
         {
           "name": "isSequential",
@@ -2485,9 +2243,7 @@
     },
     {
       "name": "StandardLoopCharacteristics",
-      "superClass": [
-        "LoopCharacteristics"
-      ],
+      "superClass": ["LoopCharacteristics"],
       "properties": [
         {
           "name": "testBefore",
@@ -2511,10 +2267,7 @@
     },
     {
       "name": "CallActivity",
-      "superClass": [
-        "Activity",
-        "InteractionNode"
-      ],
+      "superClass": ["Activity", "InteractionNode"],
       "properties": [
         {
           "name": "calledElement",
@@ -2525,16 +2278,11 @@
     },
     {
       "name": "Task",
-      "superClass": [
-        "Activity",
-        "InteractionNode"
-      ]
+      "superClass": ["Activity", "InteractionNode"]
     },
     {
       "name": "SendTask",
-      "superClass": [
-        "Task"
-      ],
+      "superClass": ["Task"],
       "properties": [
         {
           "name": "implementation",
@@ -2557,9 +2305,7 @@
     },
     {
       "name": "ReceiveTask",
-      "superClass": [
-        "Task"
-      ],
+      "superClass": ["Task"],
       "properties": [
         {
           "name": "implementation",
@@ -2588,9 +2334,7 @@
     },
     {
       "name": "ScriptTask",
-      "superClass": [
-        "Task"
-      ],
+      "superClass": ["Task"],
       "properties": [
         {
           "name": "scriptFormat",
@@ -2605,9 +2349,7 @@
     },
     {
       "name": "BusinessRuleTask",
-      "superClass": [
-        "Task"
-      ],
+      "superClass": ["Task"],
       "properties": [
         {
           "name": "implementation",
@@ -2618,9 +2360,7 @@
     },
     {
       "name": "AdHocSubProcess",
-      "superClass": [
-        "SubProcess"
-      ],
+      "superClass": ["SubProcess"],
       "properties": [
         {
           "name": "completionCondition",
@@ -2644,9 +2384,7 @@
     },
     {
       "name": "Transaction",
-      "superClass": [
-        "SubProcess"
-      ],
+      "superClass": ["SubProcess"],
       "properties": [
         {
           "name": "protocol",
@@ -2662,9 +2400,7 @@
     },
     {
       "name": "GlobalScriptTask",
-      "superClass": [
-        "GlobalTask"
-      ],
+      "superClass": ["GlobalTask"],
       "properties": [
         {
           "name": "scriptLanguage",
@@ -2680,9 +2416,7 @@
     },
     {
       "name": "GlobalBusinessRuleTask",
-      "superClass": [
-        "GlobalTask"
-      ],
+      "superClass": ["GlobalTask"],
       "properties": [
         {
           "name": "implementation",
@@ -2693,9 +2427,7 @@
     },
     {
       "name": "ComplexBehaviorDefinition",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "condition",
@@ -2709,9 +2441,7 @@
     },
     {
       "name": "ResourceRole",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "resourceRef",
@@ -2751,9 +2481,7 @@
           "isReference": true
         }
       ],
-      "superClass": [
-        "BaseElement"
-      ]
+      "superClass": ["BaseElement"]
     },
     {
       "name": "ResourceAssignmentExpression",
@@ -2766,9 +2494,7 @@
           }
         }
       ],
-      "superClass": [
-        "BaseElement"
-      ]
+      "superClass": ["BaseElement"]
     },
     {
       "name": "Import",
@@ -2792,9 +2518,7 @@
     },
     {
       "name": "Definitions",
-      "superClass": [
-        "BaseElement"
-      ],
+      "superClass": ["BaseElement"],
       "properties": [
         {
           "name": "name",

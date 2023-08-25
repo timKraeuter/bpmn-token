@@ -17,9 +17,7 @@
           "isMany": true
         }
       ],
-      "superClass": [
-        "di:Diagram"
-      ]
+      "superClass": ["di:Diagram"]
     },
     {
       "name": "BPMNPlane",
@@ -32,9 +30,7 @@
           "redefines": "di:DiagramElement#modelElement"
         }
       ],
-      "superClass": [
-        "di:Plane"
-      ]
+      "superClass": ["di:Plane"]
     },
     {
       "name": "BPMNShape",
@@ -82,9 +78,7 @@
           "isReference": true
         }
       ],
-      "superClass": [
-        "di:LabeledShape"
-      ]
+      "superClass": ["di:LabeledShape"]
     },
     {
       "name": "BPMNEdge",
@@ -121,9 +115,7 @@
           "default": "initiating"
         }
       ],
-      "superClass": [
-        "di:LabeledEdge"
-      ]
+      "superClass": ["di:LabeledEdge"]
     },
     {
       "name": "BPMNLabel",
@@ -136,9 +128,7 @@
           "redefines": "di:DiagramElement#style"
         }
       ],
-      "superClass": [
-        "di:Label"
-      ]
+      "superClass": ["di:Label"]
     },
     {
       "name": "BPMNLabelStyle",
@@ -148,9 +138,7 @@
           "type": "dc:Font"
         }
       ],
-      "superClass": [
-        "di:Style"
-      ]
+      "superClass": ["di:Style"]
     }
   ],
   "enumerations": [
