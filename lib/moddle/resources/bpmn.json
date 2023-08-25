@@ -2172,7 +2172,7 @@
       ]
     },
     {
-      "name": "TextAnnotation2",
+      "name": "Token",
       "superClass": [
         "Artifact"
       ],
