@@ -1,8 +1,8 @@
 [![Build & Test](https://github.com/timKraeuter/bpmn-token/actions/workflows/ci.yml/badge.svg)](https://github.com/timKraeuter/object-diagram-modeler/actions/workflows/ci.yml)
 
-## Try the object diagram modeler [here](https://timkraeuter.com/object-diagram-modeler/).
+## Try the BPMN token modeler [here](https://timkraeuter.com/object-diagram-modeler/).
 
-## Object diagram modeler
+## BPMN token modeler
 
 This folder contains the source code for an [bpmn-token](https://timkraeuter.com/object-diagram-modeler/) library based on **diagram-js**.
 
@@ -36,4 +36,4 @@ Contains parts of ([bpmn-io](https://github.com/bpmn-io)) released under the [bp
 
 ## Acknowledgments
 
-I used the excellent [postit-js](https://github.com/pinussilvestrus/postit-js) example as a starting point for my project.
+I used the excellent [postit-js](https://github.com/pinussilvestrus/postit-js) and [bpmn-js](https://github.com/bpmn-io/bpmn-js) as a starting point for my project.
