@@ -154,11 +154,6 @@ a:hover {
 
 /* canvas drawing */
 
-.bt-no-font-icon-token {
-  /* We use this in the context pad because the icon from the font is not scaled properly. TODO Tim: Investigate this */
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23000' stroke-width='1.5' width='46' height='46'%3E%3Crect x='10' y='13' width='26' height='20'/%3E%0Astroke='black' /%3E%3Cline x1='10' y1='19' x2='36' y2='19' stroke='black' /%3E%3C/svg%3E");
-}
-
 .pjs-horizontal {
   display: inline-block;
 }
