@@ -1,6 +1,4 @@
-.bt-icon-token:before {
-  content: "\e800";
-} /* '' */
-.bt-icon-process:before {
-  content: "\e801";
-} /* '' */
+
+.bt-icon-token:before { content: '\e800'; } /* '' */
+.bt-icon-process:before { content: '\e801'; } /* '' */
+.bt-icon-no-token:before { content: '\e802'; } /* '' */

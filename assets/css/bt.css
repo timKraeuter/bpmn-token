@@ -1,12 +1,11 @@
 @font-face {
-  font-family: "bt";
-  src: url("../font/bt.eot?32575707");
-  src:
-    url("../font/bt.eot?32575707#iefix") format("embedded-opentype"),
-    url("../font/bt.woff2?32575707") format("woff2"),
-    url("../font/bt.woff?32575707") format("woff"),
-    url("../font/bt.ttf?32575707") format("truetype"),
-    url("../font/bt.svg?32575707#bt") format("svg");
+  font-family: 'bt';
+  src: url('../font/bt.eot?49834388');
+  src: url('../font/bt.eot?49834388#iefix') format('embedded-opentype'),
+       url('../font/bt.woff2?49834388') format('woff2'),
+       url('../font/bt.woff?49834388') format('woff'),
+       url('../font/bt.ttf?49834388') format('truetype'),
+       url('../font/bt.svg?49834388#bt') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -16,12 +15,11 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'bt';
-    src: url('../font/bt.svg?32575707#bt') format('svg');
+    src: url('../font/bt.svg?49834388#bt') format('svg');
   }
 }
 */
-[class^="bt-icon-"]:before,
-[class*=" bt-icon-"]:before {
+[class^="bt-icon-"]:before, [class*=" bt-icon-"]:before {
   font-family: "bt";
   font-style: normal;
   font-weight: normal;
@@ -51,9 +49,6 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.bt-icon-token:before {
-  content: "\e800";
-} /* '' */
-.bt-icon-process:before {
-  content: "\e801";
-} /* '' */
+.bt-icon-token:before { content: '\e800'; } /* '' */
+.bt-icon-process:before { content: '\e801'; } /* '' */
+.bt-icon-no-token:before { content: '\e802'; } /* '' */
