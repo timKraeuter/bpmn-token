@@ -64,6 +64,6 @@
     "min-dom": "^4.1.0",
     "object-refs": "^0.3.0",
     "tiny-svg": "^3.0.0",
-    "token-bpmn-moddle": "^1.0.4"
+    "token-bpmn-moddle": "^1.0.5"
   }
 }
