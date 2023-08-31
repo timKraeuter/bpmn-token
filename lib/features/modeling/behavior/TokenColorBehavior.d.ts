@@ -1,4 +1,4 @@
-export default class TokenElementColorBehavior extends CommandInterceptor {
+export default class TokenColorBehavior extends CommandInterceptor {
   /**
    * @param eventBus
    * @param modeling
