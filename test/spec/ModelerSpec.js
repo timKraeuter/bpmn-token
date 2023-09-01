@@ -40,7 +40,11 @@ describe("Modeler", function () {
     return modeler
       .importXML(xml)
       .then(function (result) {
-        return { error: null, warnings: result.warnings, modeler: modeler };
+        return {
+          error: null,
+          warnings: result.warnings,
+          modeler: modeler,
+        };
       })
       .catch(function (err) {
         return { error: err, warnings: err.warnings, modeler: modeler };
