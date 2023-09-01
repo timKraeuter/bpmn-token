@@ -126,7 +126,6 @@ describe("Modeler", function () {
 
       // then
       var actualActions = editorActions.getActions();
-      console.log(actualActions);
 
       expect(actualActions).to.eql(expectedActions);
     });
