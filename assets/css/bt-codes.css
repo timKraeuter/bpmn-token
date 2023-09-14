@@ -7,3 +7,6 @@
 .bt-icon-no-token:before {
   content: "\e802";
 } /* '' */
+.bt-icon-color:before {
+  content: "\e803";
+} /* '' */
