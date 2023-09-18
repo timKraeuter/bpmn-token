@@ -12,15 +12,6 @@ module.exports = (env) => {
     // GitHub pages expects static files here.
     outputPath = __dirname + "/../docs";
   }
-  if (env.debuggerDev) {
-    path = "debugger";
-  }
-  if (env.debuggerDeploy) {
-    path = "debugger";
-
-    // We expect the Visual debugger project in the same folder as this project.
-    outputPath = __dirname + "/../../VisualDebugger/src/main/resources/ui";
-  }
   return {
     entry: {
       bundle: [`./${path}/app.js`],
