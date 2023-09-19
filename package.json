@@ -65,6 +65,6 @@
     "object-refs": "^0.3.0",
     "randomcolor": "^0.6.2",
     "tiny-svg": "^3.0.0",
-    "token-bpmn-moddle": "^1.0.6"
+    "token-bpmn-moddle": "^1.0.7"
   }
 }
