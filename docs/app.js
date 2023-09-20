@@ -11213,8 +11213,18 @@ BpmnUpdater.prototype.updateSemanticParent = function (
         newParent = newParent.$parent;
       }
     }
-
     containment = "artifacts";
+    // TODO: Token
+    // Fixes the parent relationship for extension elements.
+    if (
+      (0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_2__.is)(businessObject, "bt:BaseToken") &&
+      newParent &&
+      newParent.get("extensionElements")
+    ) {
+      newParent.get("extensionElements").$parent = newParent;
+      newParent = newParent.get("extensionElements");
+      containment = "values";
+    }
   } else if ((0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_2__.is)(businessObject, "bpmn:MessageFlow")) {
     containment = "messageFlows";
   } else if ((0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_2__.is)(businessObject, "bpmn:Participant")) {
@@ -14131,9 +14141,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * @typedef {import('diagram-js/lib/core/EventBus').default} EventBus
- * @typedef {import('../../rules/BpmnRules').default} BpmnRules
- * @typedef {import('../../modeling/Modeling').default} Modeling
+ * @typedef {import("diagram-js/lib/core/EventBus").default} EventBus
+ * @typedef {import("../../rules/BpmnRules").default} BpmnRules
+ * @typedef {import("../../modeling/Modeling").default} Modeling
  */
 
 /**
@@ -17977,13 +17987,15 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * @typedef {import("diagram-js/lib/core/EventBus").default} EventBus
  * @typedef {import("../../modeling/Modeling").default} Modeling
+ * @typedef {import("../../../model/Types").Moddle} Moddle
  */
 
 /**
  * @param {EventBus} eventBus
  * @param {Modeling} modeling
+ * @param {Moddle} moddle
  */
-function TokenSnapshotBehavior(eventBus, modeling) {
+function TokenSnapshotBehavior(eventBus, modeling, moddle) {
   diagram_js_lib_command_CommandInterceptor__WEBPACK_IMPORTED_MODULE_1__["default"].call(this, eventBus);
 
   // TODO: Token
@@ -18015,6 +18027,27 @@ function TokenSnapshotBehavior(eventBus, modeling) {
       if ((0,_util_ModelingUtil__WEBPACK_IMPORTED_MODULE_2__.is)(shape, "bt:ProcessSnapshot")) {
         modeling.setColor(shape, {
           fill: getRandomHighContrastColor(shape, 5),
+        });
+      }
+    },
+    true,
+  );
+
+  // Add extensionElements to the parent of a token or process snapshot if needed.
+  this.preExecute(
+    "shape.create",
+    function (context) {
+      const parent = context.parent,
+        shape = context.shape;
+
+      if (
+        (0,_util_ModelingUtil__WEBPACK_IMPORTED_MODULE_2__.is)(shape, "bt:BaseToken") &&
+        !parent.businessObject.extensionElements
+      ) {
+        modeling.updateModdleProperties(parent, parent.businessObject, {
+          extensionElements: moddle.create("bpmn:ExtensionElements", {
+            values: [],
+          }),
         });
       }
     },
@@ -18118,7 +18151,7 @@ function TokenSnapshotBehavior(eventBus, modeling) {
 
 (0,inherits_browser__WEBPACK_IMPORTED_MODULE_4__["default"])(TokenSnapshotBehavior, diagram_js_lib_command_CommandInterceptor__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
-TokenSnapshotBehavior.$inject = ["eventBus", "modeling"];
+TokenSnapshotBehavior.$inject = ["eventBus", "modeling", "moddle"];
 
 
 /***/ }),
@@ -26716,6 +26749,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var min_dash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! min-dash */ "../node_modules/min-dash/dist/index.esm.js");
 /* harmony import */ var _Util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Util */ "../lib/import/Util.js");
 /* harmony import */ var _util_CompatibilityUtil__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/CompatibilityUtil */ "../lib/util/CompatibilityUtil.js");
+/* harmony import */ var _util_ModelUtil__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/ModelUtil */ "../lib/util/ModelUtil.js");
+
 
 
 
@@ -26723,9 +26758,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * @typedef {import('diagram-js/lib/i18n/translate/translate').default} Translate
+ * @typedef {import("diagram-js/lib/i18n/translate/translate").default} Translate
  *
- * @typedef {import('../model/Types').ModdleElement} ModdleElement
+ * @typedef {import("../model/Types").ModdleElement} ModdleElement
  */
 
 /**
@@ -26755,7 +26790,7 @@ function findDisplayCandidate(definitions) {
 }
 
 /**
- * @param {Record<'element' | 'root' | 'error', Function>} handler
+ * @param {Record<"element" | "root" | "error", Function>} handler
  * @param {Translate} translate
  */
 function BpmnTreeWalker(handler, translate) {
@@ -26976,6 +27011,9 @@ function BpmnTreeWalker(handler, translate) {
 
     handleArtifacts(process.artifacts, context);
 
+    // TODO: Token
+    handleTokenExtensions(process.extensionElements, context);
+
     // log process handled
     handled(process);
   }
@@ -27029,6 +27067,22 @@ function BpmnTreeWalker(handler, translate) {
         handleArtifact(e, context);
       }
     });
+  }
+
+  function handleTokenExtension(extensionElement, context) {
+    // bt:Token
+    // bt:ProcessSnapshot
+    visitIfDi(extensionElement, context);
+  }
+
+  function handleTokenExtensions(extensionElements, context) {
+    if (extensionElements && extensionElements.values) {
+      (0,min_dash__WEBPACK_IMPORTED_MODULE_0__.forEach)(extensionElements.values, function (e) {
+        if ((0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_3__.isAny)(e, ["bt:Token", "bt:ProcessSnapshot"])) {
+          handleTokenExtension(e, context);
+        }
+      });
+    }
   }
 
   function handleIoSpecification(ioSpecification, context) {
@@ -27157,6 +27211,9 @@ function BpmnTreeWalker(handler, translate) {
     (0,min_dash__WEBPACK_IMPORTED_MODULE_0__.forEach)(collaboration.participants, contextual(handleParticipant, context));
 
     handleArtifacts(collaboration.artifacts, context);
+
+    // TODO: Token
+    handleTokenExtensions(collaboration.extensionElements, context);
 
     // handle message flows latest in the process
     deferred.push(function () {
@@ -89856,7 +89913,7 @@ Moddle.prototype.getTypeDescriptor = function(type) {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"Token","uri":"http://tk/schema/1.0/bt","prefix":"bt","xml":{"tagAlias":"lowerCase"},"associations":[],"types":[{"name":"BaseToken","superClass":["bpmn:Artifact"],"properties":[{"name":"shouldExist","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"Token","superClass":["BaseToken"],"properties":[{"name":"processSnapshot","type":"ProcessSnapshot","isAttr":true,"isReference":true}]},{"name":"ProcessSnapshot","superClass":["BaseToken"],"properties":[]}],"enumerations":[]}');
+module.exports = JSON.parse('{"name":"Token","uri":"http://tk/schema/1.0/bt","prefix":"bt","xml":{"tagAlias":"lowerCase"},"associations":[],"types":[{"name":"BaseToken","superClass":["bpmn:Artifact","Element"],"properties":[{"name":"shouldExist","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"Token","superClass":["BaseToken"],"properties":[{"name":"processSnapshot","type":"ProcessSnapshot","isAttr":true,"isReference":true}]},{"name":"ProcessSnapshot","superClass":["BaseToken"],"properties":[]}],"enumerations":[]}');
 
 /***/ })
 
