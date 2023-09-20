@@ -10597,16 +10597,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * @typedef {import('diagram-js/lib/core/EventBus').default} EventBus
- * @typedef {import('./BpmnFactory').default} BpmnFactory
- * @typedef {import('diagram-js/lib/layout/CroppingConnectionDocking').default} CroppingConnectionDocking
- * @typedef {import('diagram-js/lib/i18n/translate/translate').default} Translate
+ * @typedef {import("diagram-js/lib/core/EventBus").default} EventBus
+ * @typedef {import("./BpmnFactory").default} BpmnFactory
+ * @typedef {import("diagram-js/lib/layout/CroppingConnectionDocking").default} CroppingConnectionDocking
+ * @typedef {import("diagram-js/lib/i18n/translate/translate").default} Translate
  *
- * @typedef {import('../../model/Types').Connection} Connection
- * @typedef {import('../../model/Types').Element} Element
- * @typedef {import('../../model/Types').Shape} Shape
- * @typedef {import('../../model/Types').Parent} Parent
- * @typedef {import('../../model/Types').ModdleElement} ModdleElement
+ * @typedef {import("../../model/Types").Connection} Connection
+ * @typedef {import("../../model/Types").Element} Element
+ * @typedef {import("../../model/Types").Shape} Shape
+ * @typedef {import("../../model/Types").Parent} Parent
+ * @typedef {import("../../model/Types").ModdleElement} ModdleElement
  */
 
 /**
@@ -11213,9 +11213,9 @@ BpmnUpdater.prototype.updateSemanticParent = function (
         newParent = newParent.$parent;
       }
     }
-    containment = "artifacts";
-    // TODO: Token
+    // TODO: Token (can be done much cleaner if we dont extend artifacts anymore but works for now)
     // Fixes the parent relationship for extension elements.
+    containment = (0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_2__.is)(businessObject, "bt:BaseToken") ? "values" : "artifacts";
     if (
       (0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_2__.is)(businessObject, "bt:BaseToken") &&
       newParent &&
@@ -11223,7 +11223,6 @@ BpmnUpdater.prototype.updateSemanticParent = function (
     ) {
       newParent.get("extensionElements").$parent = newParent;
       newParent = newParent.get("extensionElements");
-      containment = "values";
     }
   } else if ((0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_2__.is)(businessObject, "bpmn:MessageFlow")) {
     containment = "messageFlows";
