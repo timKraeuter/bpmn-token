@@ -11216,13 +11216,17 @@ BpmnUpdater.prototype.updateSemanticParent = function (
     // TODO: Token (can be done much cleaner if we dont extend artifacts anymore but works for now)
     // Fixes the parent relationship for extension elements.
     containment = (0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_2__.is)(businessObject, "bt:BaseToken") ? "values" : "artifacts";
-    if (
-      (0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_2__.is)(businessObject, "bt:BaseToken") &&
-      newParent &&
-      newParent.get("extensionElements")
-    ) {
-      newParent.get("extensionElements").$parent = newParent;
-      newParent = newParent.get("extensionElements");
+    if ((0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_2__.is)(businessObject, "bt:BaseToken") && newParent) {
+      if (!newParent.extensionElements) {
+        newParent.extensionElements = this._bpmnFactory.create(
+          "bpmn:ExtensionElements",
+          {
+            values: [],
+          },
+        );
+      }
+      newParent.extensionElements.$parent = newParent;
+      newParent = newParent.extensionElements;
     }
   } else if ((0,_util_ModelUtil__WEBPACK_IMPORTED_MODULE_2__.is)(businessObject, "bpmn:MessageFlow")) {
     containment = "messageFlows";
@@ -17986,15 +17990,13 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * @typedef {import("diagram-js/lib/core/EventBus").default} EventBus
  * @typedef {import("../../modeling/Modeling").default} Modeling
- * @typedef {import("../../../model/Types").Moddle} Moddle
  */
 
 /**
  * @param {EventBus} eventBus
  * @param {Modeling} modeling
- * @param {Moddle} moddle
  */
-function TokenSnapshotBehavior(eventBus, modeling, moddle) {
+function TokenSnapshotBehavior(eventBus, modeling) {
   diagram_js_lib_command_CommandInterceptor__WEBPACK_IMPORTED_MODULE_1__["default"].call(this, eventBus);
 
   // TODO: Token
@@ -18026,27 +18028,6 @@ function TokenSnapshotBehavior(eventBus, modeling, moddle) {
       if ((0,_util_ModelingUtil__WEBPACK_IMPORTED_MODULE_2__.is)(shape, "bt:ProcessSnapshot")) {
         modeling.setColor(shape, {
           fill: getRandomHighContrastColor(shape, 5),
-        });
-      }
-    },
-    true,
-  );
-
-  // Add extensionElements to the parent of a token or process snapshot if needed.
-  this.preExecute(
-    "shape.create",
-    function (context) {
-      const parent = context.parent,
-        shape = context.shape;
-
-      if (
-        (0,_util_ModelingUtil__WEBPACK_IMPORTED_MODULE_2__.is)(shape, "bt:BaseToken") &&
-        !parent.businessObject.extensionElements
-      ) {
-        modeling.updateModdleProperties(parent, parent.businessObject, {
-          extensionElements: moddle.create("bpmn:ExtensionElements", {
-            values: [],
-          }),
         });
       }
     },
@@ -18150,7 +18131,7 @@ function TokenSnapshotBehavior(eventBus, modeling, moddle) {
 
 (0,inherits_browser__WEBPACK_IMPORTED_MODULE_4__["default"])(TokenSnapshotBehavior, diagram_js_lib_command_CommandInterceptor__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
-TokenSnapshotBehavior.$inject = ["eventBus", "modeling", "moddle"];
+TokenSnapshotBehavior.$inject = ["eventBus", "modeling"];
 
 
 /***/ }),
