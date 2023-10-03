@@ -6,9 +6,11 @@ import TokenBPMNModeler from "bpmn-token/lib/Modeler";
 import emptyBoardXML from "../resources/initial.bpmn";
 import sampleBoardXML from "../resources/initial.bpmn";
 import TokenContextPadProvider from "../../lib/features/token-context-pad/TokenContextPadProvider";
+import TokenPaletteProvider from "../../lib/features/token-palette/TokenPaletteProvider";
 
-const contextPadOverrideModule = {
+const tokenOverrideModule = {
   contextPadProvider: ["type", TokenContextPadProvider],
+  paletteProvider: ["type", TokenPaletteProvider],
 };
 
 // modeler instance
@@ -17,7 +19,7 @@ const modeler = new TokenBPMNModeler({
   keyboard: {
     bindTo: window,
   },
-  additionalModules: [contextPadOverrideModule],
+  additionalModules: [tokenOverrideModule],
 });
 
 /* screen interaction */
