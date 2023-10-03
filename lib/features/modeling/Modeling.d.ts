@@ -58,7 +58,7 @@ export default class Modeling<
   connect(
     source: Element,
     target: Element,
-    attrs: Partial<Connection>,
+    attrs?: Partial<Connection>,
     hints?: ModelingHints,
   ): T;
 
