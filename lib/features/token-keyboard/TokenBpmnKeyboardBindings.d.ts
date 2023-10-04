@@ -1,5 +1,5 @@
 /**
- * BPMN 2.0 specific keyboard bindings.
+ * Token BPMN 2.0 specific keyboard bindings.
  *
  */
 export default class TokenKeyboardBindings extends KeyboardBindings {
