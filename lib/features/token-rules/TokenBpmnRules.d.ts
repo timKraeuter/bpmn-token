@@ -3,9 +3,6 @@
  *
  */
 export default class BpmnRules extends RuleProvider {
-  canConnectMessageFlow: typeof canConnectMessageFlow;
-  canConnectSequenceFlow: typeof canConnectSequenceFlow;
-  canConnectDataAssociation: typeof canConnectDataAssociation;
   canConnectAssociation: typeof canConnectAssociation;
   canMove: typeof canMove;
   canAttach: typeof canAttach;
@@ -49,39 +46,6 @@ import RuleProvider from "diagram-js/lib/features/rules/RuleProvider";
  *
  * @return
  */
-declare function canConnectMessageFlow(
-  source: Element,
-  target: Element,
-): boolean;
-
-/**
- * @param source
- * @param target
- *
- * @return
- */
-declare function canConnectSequenceFlow(
-  source: Element,
-  target: Element,
-): boolean;
-
-/**
- * @param source
- * @param target
- *
- * @return
- */
-declare function canConnectDataAssociation(
-  source: Element,
-  target: Element,
-): CanConnectResult;
-
-/**
- * @param source
- * @param target
- *
- * @return
- */
 declare function canConnectAssociation(
   source: Element,
   target: Element,
@@ -96,7 +60,6 @@ declare function canConnectAssociation(
 declare function canMove(elements: Element[], target: Shape): boolean;
 
 /**
- * TODO(philippfromme): remove `source` parameter
  *
  * @param elements
  * @param target
