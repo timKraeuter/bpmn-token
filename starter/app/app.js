@@ -7,13 +7,13 @@ import emptyBoardXML from "../resources/initial.bpmn";
 import sampleBoardXML from "../resources/initial.bpmn";
 import TokenContextPadProvider from "../../lib/features/token-context-pad/TokenContextPadProvider";
 import TokenPaletteProvider from "../../lib/features/token-palette/TokenPaletteProvider";
-import TokenKeyboardBindings from "../../lib/features/token-keyboard/TokenKeyboardBindings";
+import TokenBpmnKeyboardBindings from "../../lib/features/token-keyboard/TokenBpmnKeyboardBindings";
 import TokenBpmnRules from "../../lib/features/token-rules/TokenBpmnRules";
 
 const tokenOverrideModule = {
   contextPadProvider: ["type", TokenContextPadProvider],
   paletteProvider: ["type", TokenPaletteProvider],
-  keyboardBindings: ["type", TokenKeyboardBindings],
+  keyboardBindings: ["type", TokenBpmnKeyboardBindings],
   bpmnRules: ["type", TokenBpmnRules],
 };
 
