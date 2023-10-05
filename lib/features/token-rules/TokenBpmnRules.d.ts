@@ -5,7 +5,6 @@
 export default class BpmnRules extends RuleProvider {
   canConnectAssociation: typeof canConnectAssociation;
   canMove: typeof canMove;
-  canAttach: typeof canAttach;
   canReplace: typeof canReplace;
   canDrop: typeof canDrop;
   canInsert: typeof canInsert;
@@ -58,22 +57,6 @@ declare function canConnectAssociation(
  * @return
  */
 declare function canMove(elements: Element[], target: Shape): boolean;
-
-/**
- *
- * @param elements
- * @param target
- * @param source
- * @param position
- *
- * @return
- */
-declare function canAttach(
-  elements: Element[],
-  target: Shape,
-  source: Element,
-  position?: Point,
-): boolean | "attach";
 
 /**
  * Check whether the given elements can be replaced. Return all elements which
