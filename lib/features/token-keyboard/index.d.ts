@@ -4,4 +4,4 @@ declare namespace _default {
   const keyboardBindings: (string | typeof TokenKeyboardBindings)[];
 }
 export default _default;
-import TokenKeyboardBindings from "./TokenBpmnKeyboardBindings";
+import TokenKeyboardBindings from "./TokenKeyboardBindings";

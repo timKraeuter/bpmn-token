@@ -2,7 +2,7 @@
  * Token BPMN-specific modeling rules.
  *
  */
-export default class BpmnRules extends RuleProvider {
+export default class TokenRules extends RuleProvider {
   canConnectAssociation: typeof canConnectAssociation;
   canMove: typeof canMove;
   canReplace: typeof canReplace;
