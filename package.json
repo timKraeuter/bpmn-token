@@ -1,6 +1,13 @@
 {
   "name": "bpmn-token",
   "version": "1.0.1",
+  "description": "A library/modeler adding tokens and process snapshots to BPMN to describe the state of a running BPMN process.",
+  "main": "index.js",
+  "files": [
+    "assets",
+    "lib",
+    "!.eslintrc"
+  ],
   "scripts": {
     "all": "run-s lint test",
     "lint": "eslint .",
