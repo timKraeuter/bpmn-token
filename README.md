@@ -5,6 +5,7 @@
 ## BPMN token modeler
 
 This folder contains the source code for a [bpmn-token](https://timkraeuter.com/object-diagram-modeler/) library based on **bpmn-js/diagram-js**.
+We are currently working on separating all token-related functionality from the bpmn-js source code (see **TODO: Token**).
 
 ### Installing dependencies
 
