@@ -1,6 +1,6 @@
-# Object diagram modeler
+# BPMN token
 
-This example uses [diagram-js](https://github.com/bpmn-io/diagram-js) to implement a modeler for object diagrams.
+This example uses [diagram-js](https://github.com/bpmn-io/diagram-js) to implement a token editor for bpmn.
 
 ## About
 
@@ -16,7 +16,7 @@ To install all project dependencies execute
 npm install
 ```
 
-Build the application (including [postit-js](https://github.com/pinussilvestrus/postit-js)) via
+Build the application via
 
 ```
 npm run all
