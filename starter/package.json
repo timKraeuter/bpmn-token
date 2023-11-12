@@ -37,7 +37,6 @@
   "dependencies": {
     "jquery": "^3.7.0",
     "bpmn-token": "file:../",
-    "inherits": "^2.0.4",
-    "elkjs": "^0.8.2"
+    "inherits": "^2.0.4"
   }
 }
