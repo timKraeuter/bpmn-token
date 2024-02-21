@@ -7,19 +7,19 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        node-version: [18.18.0]
+        node-version: [20]
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cache Node.js modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ~/.npm
@@ -29,22 +29,22 @@ jobs:
             ${{ runner.OS }}-
 
       #  Check modeler
-      - name: Install modeler dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Test modeler
+      - name: Test & Lint library
         if: matrix.os == 'ubuntu-latest'
         env:
-          TEST_BROWSERS: ChromeHeadless
+          TEST_BROWSERS: ChromeHeadless,Firefox
         run: xvfb-run npm run all
 
       - name: Build modeler
         if: matrix.os != 'ubuntu-latest'
         env:
-          TEST_BROWSERS: ChromeHeadless,Firefox
+          TEST_BROWSERS: ChromeHeadless
         run: npm run all
 
-      - name: Setup and build modeler starter
+      - name: Setup and build starter
         working-directory: ./starter
         run: |
           npm install
