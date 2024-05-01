@@ -63,7 +63,7 @@
     "bpmn-font": "^0.12.1",
     "bpmn-moddle": "^9.0.1",
     "diagram-js": "^14.3.1",
-    "diagram-js-direct-editing": "^2.1.2",
+    "diagram-js-direct-editing": "^3.0.1",
     "ids": "^1.0.5",
     "inherits": "^2.0.4",
     "min-dash": "^4.2.1",
